@@ -10,6 +10,7 @@ jQuery(document).ready( function() {
 	jQuery('#adminmenu li a.menu-icon-users').prepend('<i class="icon-user"></i> ');
 	jQuery('#adminmenu li a.menu-icon-tools').prepend('<i class="icon-wrench"></i> ');
 	jQuery('#adminmenu li a.menu-icon-settings').prepend('<i class="icon-cog"></i> ');
+	jQuery('#adminmenu li a.menu-icon-site').prepend('<i class="icon-th-list"></i> ');
 
 	jQuery('#adminmenu li.wp-not-current-submenu, .folded #adminmenu li.wp-has-submenu').popover({		
 		title: function() {
