@@ -10,7 +10,7 @@ Author URI: http://aristeides.com
 */
 
 function bootstrap_admin() {
-	echo '<link rel="stylesheet" type="text/less" href="' .plugins_url('style.css', __FILE__). '">';
+	echo '<link rel="stylesheet" type="text/less" href="' .plugins_url('css/style.css', __FILE__). '">';
 }
 
 add_action('admin_head', 'bootstrap_admin');
