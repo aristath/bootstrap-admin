@@ -1,6 +1,6 @@
 === Bootstrap Admin ===
 Contributors: aristath
-Donate link: http://aristeides.com
+Donate link: http://aristeides.com/bootstrap-admin
 Tags: administration, admin theme, dashboard, bootstrap
 Requires at least: 3.4
 Tested up to: 3.4.1
@@ -13,6 +13,7 @@ A clean, minimalistic administration theme inspired from Twitter's Bootstrap
 == Description ==
 
 A clean, minimalistic administration theme inspired from Twitter's Bootstrap.
+You can get it on github here: http://aristeides.com/bootstrap-admin
 http://twitter.github.com/bootstrap
 
 This project was built for the http://magazi.org network of stores.

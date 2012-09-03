@@ -4035,6 +4035,7 @@ a.thumbnail:hover {
   padding: 9px;
   color: #555555;
 }
+.wrap div.updated,
 .message,
 .alert {
   padding: 8px 35px 8px 14px;
@@ -4061,6 +4062,8 @@ a.thumbnail:hover {
   border-color: #d6e9c6;
   color: #468847;
 }
+.wrap div.error,
+.media-upload-form div.error,
 .alert-danger,
 .alert-error {
   background-color: #f2dede;
