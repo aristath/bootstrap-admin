@@ -3460,6 +3460,7 @@ input[type="submit"].btn.btn-mini {
   background-color: transparent;
   cursor: default;
 }
+#wpadminbar,
 .navbar {
   overflow: visible;
   margin-bottom: 20px;
@@ -3467,6 +3468,7 @@ input[type="submit"].btn.btn-mini {
   *position: relative;
   *z-index: 2;
 }
+#wpadminbar,
 .navbar-inner {
   min-height: 40px;
   padding-left: 20px;
@@ -3806,9 +3808,11 @@ input[type="submit"].btn.btn-mini {
   -moz-border-radius: 6px 0 6px 6px;
   border-radius: 6px 0 6px 6px;
 }
+#wpadminbar,
 .navbar-inverse {
   color: #999999;
 }
+#wpadminbar,
 .navbar-inverse .navbar-inner {
   background-color: #1b1b1b;
   background-image: -moz-linear-gradient(top, #222222, #111111);
@@ -6069,7 +6073,7 @@ li.wp-menu-separator{
 	background: #fff;
 }
 #adminmenu{
-	margin-top: 20px;
+	margin-top: 10px;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
@@ -6153,3 +6157,47 @@ body.folded .wp-menu-image{
 #adminmenu li.menu-top.wp-not-current-submenu .wp-submenu{
 	display: none !important;
 }
+#adminmenu li.menu-top.wp-not-current-submenu li a{
+	padding-left: 0;
+}
+#adminmenu li.menu-top.wp-not-current-submenu li a:hover{
+	color: #333;
+}
+#wpcontent{
+	margin-top:15px;
+}
+#wpadminbar{
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	padding-left: 0;
+}
+#wpadminbar ul li{
+	height: 100%;
+}
+#wpadminbar .quicklinks a,
+#wpadminbar .quicklinks .ab-empty-item,
+#wpadminbar .shortlink-input
+#wpadminbar ul li a{
+	height: 100%;
+}
+#wpadminbar .quicklinks > ul > li > a,
+#wpadminbar .quicklinks > ul > li > .ab-empty-item,
+#wpadminbar .quicklinks > ul > li{
+	border-right: 1px solid #181818;
+}
+#wpadminbar .quicklinks{
+	padding: 6px 0;
+}
+#wpadminbar .ab-top-secondary{
+	background: none;
+	background-color: none;
+	background: transparent;
+}
+#wpadminbar .quicklinks .ab-top-secondary > li > a,
+#wpadminbar .quicklinks .ab-top-secondary > li > .ab-empty-item,
+#wpadminbar .quicklinks .ab-top-secondary > li{
+	border-left: none;
+	border-left: 0;
+}
+.hidden{visibility: visible;}
