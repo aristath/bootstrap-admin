@@ -5078,7 +5078,7 @@ button.close {
 .affix {
   position: fixed;
 }
-/*.fade {
+.fade {
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
   -moz-transition: opacity 0.15s linear;
@@ -5087,7 +5087,7 @@ button.close {
 }
 .fade.in {
   opacity: 1;
-}*/
+}
 .collapse {
   position: relative;
   height: 0;
@@ -6149,4 +6149,7 @@ body.folded .wp-menu-image{
 .submitbox .submitdelete:hover{
 	border-bottom: 0;
 	border-bottom: none;
+}
+#adminmenu li.menu-top.wp-not-current-submenu .wp-submenu{
+	display: none !important;
 }

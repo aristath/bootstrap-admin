@@ -27,6 +27,7 @@ jQuery(document).ready( function() {
 			var submenu = jQuery(this).find('.wp-submenu ul').html();
 			return submenu;
 		},
-		placement: 'inside right'
+		placement: 'inside right',
+		trigger: 'hover'
 	});
 });
