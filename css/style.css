@@ -4988,17 +4988,6 @@ a.thumbnail:hover {
 .carousel-caption p {
   margin-bottom: 0;
 }
-.postbox,
-.postbox h3, 
-.stuffbox h3, 
-.widefat thead tr th, 
-.widefat tfoot tr th, 
-h3.dashboard-widget-title, 
-h3.dashboard-widget-title span, 
-h3.dashboard-widget-title small, 
-.find-box-head, .sidebar-name, 
-#nav-menu-header, #nav-menu-footer, 
-.menu-item-handle,
 .well {
   min-height: 20px;
   padding: 19px;
@@ -5022,18 +5011,6 @@ h3.dashboard-widget-title small,
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
-.widget .widget-top, 
-.postbox h3, 
-.stuffbox h3, 
-.widefat thead tr th, 
-.widefat tfoot tr th, 
-h3.dashboard-widget-title, 
-h3.dashboard-widget-title span, 
-h3.dashboard-widget-title small, 
-.find-box-head, .sidebar-name, 
-#nav-menu-header, 
-#nav-menu-footer, 
-.menu-item-handle,
 .well-small {
   padding: 9px;
   -webkit-border-radius: 3px;
@@ -6209,4 +6186,31 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary{
 	padding: 4px 14px;
+}
+
+.postbox {
+  position: relative;
+  margin: 15px 0;
+  padding: 20px 10px 10px;
+  *padding-top: 19px;
+  background: #fff;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+.postbox .hndle{
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  color: #9da0a4;
+  -webkit-border-radius: 4px 0 4px 0;
+     -moz-border-radius: 4px 0 4px 0;
+          border-radius: 4px 0 4px 0;
 }
