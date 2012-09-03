@@ -2141,6 +2141,8 @@ a.button,
 .btn-small [class^="icon-"] {
   margin-top: 0;
 }
+#minor-publishing-actions input, 
+#minor-publishing-actions .preview,
 .plugins a.delete,
 #all-plugins-table .plugins a.delete,
 #search-plugins-table .plugins a.delete,
@@ -6191,7 +6193,7 @@ input[type="button"].button-primary{
 .postbox {
   position: relative;
   margin: 15px 0;
-  padding: 20px 10px 10px;
+  padding: 30px 10px 10px;
   *padding-top: 19px;
   background: #fff;
   background-color: #fff;
@@ -6199,6 +6201,9 @@ input[type="button"].button-primary{
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
 }
 .postbox .hndle{
   position: absolute;
@@ -6213,4 +6218,19 @@ input[type="button"].button-primary{
   -webkit-border-radius: 4px 0 4px 0;
      -moz-border-radius: 4px 0 4px 0;
           border-radius: 4px 0 4px 0;
+}
+
+.widget-holder .widget-title h4{
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.postbox .handlediv{
+	position: absolute;
+	top: 2px;
+	right: 0;
+}
+.postbox.closed .hndle{
+	top: 0;
+	left: 0;
 }
