@@ -9,14 +9,17 @@ Version: 0.1
 Author URI: http://aristeides.com
 */
 
-function bootstrap_admin() {
-	echo '<script type="text/javascript" src="' .plugins_url('js/bootstrap.min.js', __FILE__). '"></script>';
-	echo '<script type="text/javascript" src="' .plugins_url('js/script.js', __FILE__). '"></script>';
-	echo '<link rel="stylesheet" type="text/less" href="' .plugins_url('css/style.css', __FILE__). '">';
+function bootstrap_admin_styles() {
+	wp_register_style('customized_bootstrap', plugins_url('css/style.css', __FILE__), false, '2.1.0');
+	wp_enqueue_style('customized_bootstrap');
 }
+add_action('admin_enqueue_scripts', 'bootstrap_admin_styles');
 
-add_action('admin_head', 'bootstrap_admin');
+function bootstrap_admin_scripts(){
+	wp_register_script('bootstrap_main_js', plugins_url('js/bootstrap.min.js', __FILE__), false, null, false);
+	wp_enqueue_script('bootstrap_main_js');
 
-?>
-    
-
+	wp_register_script('bootstrap_admin_script', plugins_url('js/script.js', __FILE__), false, null, false);
+	wp_enqueue_script('bootstrap_admin_script');
+}
+add_action('admin_enqueue_scripts', 'bootstrap_admin_scripts');
