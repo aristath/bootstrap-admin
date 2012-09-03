@@ -6200,4 +6200,13 @@ body.folded .wp-menu-image{
 	border-left: none;
 	border-left: 0;
 }
-.hidden{visibility: visible;}
+.hidden{
+	visibility: visible;
+}
+input[type="file"].button-primary,
+input[type="image"].button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary{
+	padding: 4px 14px;
+}
