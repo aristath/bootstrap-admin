@@ -6036,9 +6036,13 @@ li.wp-menu-separator{
 .folded #adminmenu .wp-has-current-submenu .wp-submenu{
 	width: 200px;
 }
+body.wpmu-dev_page_wpmudev-updates #wpcontent,
+body.wpmu-dev_page_wpmudev-settings div#wpcontent,
+body.wpmu-dev_page_wpmudev-plugins div#wpcontent,
+body.wpmu-dev_page_wpmudev-themes div#wpcontent,
 .toplevel_page_wpmudev #wpcontent,
 #wpcontent, #footer{
-	margin-left: 210px;
+	margin-left: 210px !important;
 }
 #adminmenuback, #adminmenuwrap{
 	background: none;
