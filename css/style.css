@@ -6248,3 +6248,8 @@ input[type="button"].button-primary{
 #poststuff #post-body.columns-2{
 	margin-right: 320px;
 }
+
+[class^="icon-"]::before, [class*=" icon-"]::before {
+	display: none !important;
+	visibility: hidden;
+}
