@@ -19,12 +19,13 @@ jQuery(document).ready( function() {
 	jQuery('#adminmenu li a.toplevel_page_incsub_support').prepend('<i class="icon-fire"></i> ');
 	jQuery('#adminmenu li a.toplevel_page_customize').prepend('<i class="icon-tint"></i> ');
 	jQuery('#adminmenu li a.toplevel_page_tools\\?page\\=domainmapping').prepend('<i class="icon-globe"></i> ');
-	jQuery('#adminmenu li a.toplevel_page_logout').prepend('<i class="icon-remove-sign"></i> ');
+	jQuery('#adminmenu li a.toplevel_page_logout').prepend('<i class="icon-remove"></i> ');
 	jQuery('#adminmenu li a.toplevel_page_business_tools').prepend('<i class="icon-map-marker"></i> ');
-
-	jQuery('#adminmenu li.wp-not-current-submenu, .folded #adminmenu li.wp-has-submenu').popover({		
+	jQuery('#adminmenu li a.toplevel_page_users\\?page\\=affiliateearnings').prepend('<i class="icon-ok"></i> ');
+	
+	jQuery('#adminmenu li.wp-not-current-submenu.wp-has-submenu, .folded #adminmenu li.wp-has-submenu').popover({		
 		title: function() {
-			var title = jQuery(this).find('li.wp-has-submenu a.menu-top').html();
+			var title = jQuery(this).find('a.menu-top').html();
 			return title;
 		},
 		content: function() {
