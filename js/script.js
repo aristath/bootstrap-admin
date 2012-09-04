@@ -20,7 +20,7 @@ jQuery(document).ready( function() {
 
 	jQuery('#adminmenu li.wp-not-current-submenu, .folded #adminmenu li.wp-has-submenu').popover({		
 		title: function() {
-			var title = jQuery(this).find('a.menu-top').html();
+			var title = jQuery(this).find('li.wp-has-submenu a.menu-top').html();
 			return title;
 		},
 		content: function() {
