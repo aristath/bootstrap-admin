@@ -23,12 +23,9 @@ function bootstrap_admin_styles() {
 	$less_mode = BOOTSTRAP_ADMIN_LESS_MODE;
 	if ($less_mode == 1){
 		bootstrap_admin_phpless();
-		wp_register_style('customized_bootstrap', plugins_url('css/compiled-style.css', __FILE__), false, '2.1.0');
-		wp_enqueue_style('customized_bootstrap');
-	} else {
-		wp_register_style('customized_bootstrap', plugins_url('css/style.css', __FILE__), false, '2.1.0');
-		wp_enqueue_style('customized_bootstrap');
 	}
+	wp_register_style('customized_bootstrap', plugins_url('css/compiled-style.css', __FILE__), false, '2.1.0');
+	wp_enqueue_style('customized_bootstrap');
 }
 add_action('admin_enqueue_scripts', 'bootstrap_admin_styles');
 

@@ -201,9 +201,9 @@ body.wpmu-dev_page_wpmudev-themes div#wpcontent,
     }
 }
 
-.widefat th#thumbnail{width: 90px;}
-th#stock.column-stock{width: 95px;}
-th#sales.column-sales{width: 95px;}
+.widefat th#thumbnail{width: 90px !important;}
+th#stock.column-stock{width: 95px !important;}
+th#sales.column-sales{width: 95px !important;}
 
 .wp-menu-image{
   display: none;
@@ -233,7 +233,9 @@ body.folded .wp-menu-image{
   padding-left: 0;
   .navbar;
   .navbar-inner;
-  .navbar-inverse !important;
+  .navbar-inverse .navbar-inner;
+  padding-left: 0;
+  padding-right: 0;
     #wpadminbar ul li{
       height: 100%;
     }
@@ -269,15 +271,12 @@ body.folded .wp-menu-image{
       background: none;
       background: transparent;
     }
-    #wp-admin-bar-top-secondary{
-      li#wp-admin-bar-pro-site{
-        a{
-          span{
-            .btn !important;
-            .btn-success !important;
-          }
-        }
-      }
+    #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span{
+      .btn () !important;
+      background: @btnSuccessBackground !important;
+      font-weight: normal;
+      .btn-success () !important;
+      margin-top: -6px;
     }
 }
 
@@ -385,4 +384,29 @@ ul.subsubsub li.active a{
   text-align: center;
   display: block;
   width: 100%;
+}
+
+body,
+div.sidebar-name h3,
+#menu-management .nav-tab,
+#dashboard_plugins h5,
+a.rsswidget,
+#dashboard_right_now td.b,
+#dashboard-widgets h4,
+.tool-box .title,
+#poststuff h3,
+.metabox-holder h3,
+.pressthis a,
+#your-profile legend,
+.inline-edit-row fieldset span.title,
+.inline-edit-row fieldset span.checkbox-title,
+.tablenav .displaying-num,
+.widefat th,
+.quicktags,
+.search{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#doaction, #doaction2, #post-query-submit{
+  margin-top: -9px;
 }
