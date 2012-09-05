@@ -1,1 +1,388 @@
 @import "../less/bootstrap.less";
+
+#adminmenu a, 
+#the-comment-list p.comment-author strong a, 
+#media-upload a.del-link, 
+#media-items a.delete, 
+.plugins a.delete, 
+.ui-tabs-nav a{
+  a;
+}
+
+table{
+  .table;
+}
+
+table.widefat{
+  .table;
+}
+
+input, textarea{
+  width: auto;
+}
+
+input[type="text"]{
+  height: auto;
+}
+
+#side-sortables #mp-single-statuses span.current,
+#side-sortables #mp-single-statuses span a,
+#wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span,
+.plugins a.delete,
+#all-plugins-table .plugins a.delete,
+#search-plugins-table .plugins a.delete,
+.submitbox .submitdelete,
+input.button-primary,
+button.button-primary,
+a.button-primary,
+.button,
+a.button,
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.wrap .add-new-h2{
+  .btn;
+}
+
+input.button-primary,
+button.button-primary,
+a.button-primary,
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+a.button,
+.wrap .add-new-h2{
+  .btn-small;
+}
+
+#minor-publishing-actions input, 
+#minor-publishing-actions .preview,
+.plugins a.delete,
+#all-plugins-table .plugins a.delete,
+#search-plugins-table .plugins a.delete,
+.submitbox .submitdelete{
+  .btn-mini;
+}
+
+#major-publishing-actions #mp-single-order-form #mp-single-order-buttons #publish.button-primary,
+#side-sortables #mp-single-statuses span.current,
+#side-sortables #mp-single-statuses span,
+#side-sortables #mp-single-statuses span a{
+  .btn-block;
+}
+
+#side-sortables #mp-single-statuses span a,
+input.button-primary,
+button.button-primary,
+a.button-primary{
+  .btn-primary;
+}
+
+.plugins a.delete,
+#all-plugins-table .plugins a.delete,
+#search-plugins-table .plugins a.delete,
+.submitbox .submitdelete,
+.wrap .add-new-h2{
+  .btn-danger;
+}
+
+#wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span,
+#major-publishing-actions #mp-single-order-form #mp-single-order-buttons #publish.button-primary{
+  .btn-success;
+}
+
+#adminmenuback,
+#adminmenushadow,
+.wp-menu-arrow,
+li.wp-menu-separator{
+  display: none !important;
+}
+#adminmenuback, 
+#adminmenuwrap, 
+#adminmenu, 
+#adminmenu .wp-submenu, 
+#adminmenu .wp-submenu-wrap, 
+.folded #adminmenu .wp-has-current-submenu .wp-submenu{
+  width: 200px;
+}
+body.wpmu-dev_page_wpmudev-updates #wpcontent,
+body.wpmu-dev_page_wpmudev-settings div#wpcontent,
+body.wpmu-dev_page_wpmudev-plugins div#wpcontent,
+body.wpmu-dev_page_wpmudev-themes div#wpcontent,
+.toplevel_page_wpmudev #wpcontent,
+#wpcontent, #footer{
+  margin-left: 210px !important;
+}
+#adminmenuback, #adminmenuwrap{
+  background: none;
+  background-color: none;
+  border: 0;
+  border: none;
+  border-color: none;
+}
+#adminmenu li .wp-submenu, .folded #adminmenu .wp-has-current-submenu .wp-submenu{
+  left: 201px;
+  background: #fff;
+}
+#adminmenu{
+  margin-top: 10px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  box-shadow: 0 1px 4px rgba(0,0,0,.065);
+    li{
+      a.menu-top{
+        padding: 8px 14px;
+        font-weight: normal;
+      }
+      &.wp-has-submenu.wp-menu-open{
+        .wp-submenu{
+          border-right: 1px solid #e5e5e5;
+          border-left: 1px solid #e5e5e5;
+          width: 198px;
+          margin: 0 0 -1px;
+        }
+      }
+      &.menu-top{
+        a.menu-top{
+          font-size: 14px;
+        }
+      }
+      &.menu-top:hover > a,
+      &.menu-top.focused > a,
+      &.menu-top > a:focus,
+      &.wp-has-current-submenu a.wp-has-current-submenu,
+      &.current a.menu-top{
+        background: #08c;
+        color: #fff
+      }
+      &.menu-top:hover > a,
+      &.menu-top.focused > a,
+      &.menu-top > a:focus,
+      &.wp-has-current-submenu a.wp-has-current-submenu,
+      &.current a.menu-top{
+        border-top-color: #e5e5e5;
+        border-right-color: #08c;
+      }
+    }
+    > li{
+      > a.menu-top{
+        border: 1px solid #E5E5E5;
+        margin: 0 0 -1px;
+      }
+      &:first-child > a.menu-top{
+        -webkit-border-radius: 6px 6px 0 0;
+        -moz-border-radius: 6px 6px 0 0;
+        border-radius: 6px 6px 0 0;
+      }
+      &:last-child{
+        -webkit-border-radius: 0 0 6px 6px;
+        -moz-border-radius: 0 0 6px 6px;
+        border-radius: 0 0 6px 6px;
+        border: 1px solid #e5e5e5;
+      }
+    }
+    .wp-has-current-submenu{
+      .wp-submenu{
+        .wp-submenu-head{
+          background: #08c;
+          border-top-color: #e5e5e5;
+          border-right-color: #08c;
+          text-shadow: none;
+          text-shadow: 0;
+        }
+      }
+    }
+}
+
+.widefat th#thumbnail{width: 90px;}
+th#stock.column-stock{width: 95px;}
+th#sales.column-sales{width: 95px;}
+
+.wp-menu-image{
+  display: none;
+}
+body.folded .wp-menu-image{
+  display: block;
+}
+#product_category-adder h4{font-size: 15px;}
+
+#adminmenu li.menu-top.wp-not-current-submenu .wp-submenu{
+  display: none !important;
+}
+#adminmenu li.menu-top.wp-not-current-submenu li a{
+  padding-left: 0;
+}
+#adminmenu li.menu-top.wp-not-current-submenu li a:hover{
+  color: #333;
+}
+#wpcontent{
+  margin-top:15px;
+}
+
+#wpadminbar{
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding-left: 0;
+  .navbar;
+  .navbar-inner;
+  .navbar-inverse !important;
+    #wpadminbar ul li{
+      height: 100%;
+    }
+    .quicklinks a,
+    .quicklinks .ab-empty-item,
+    .shortlink-input,
+    ul li a{
+      height: 100%;
+    }
+    .quicklinks{
+      padding: 6px 0;
+        > ul > li > a,
+        > ul > li > .ab-empty-item,
+        > ul > li{
+          border-right: 1px solid #181818;
+        }
+        .ab-top-secondary{
+          background: none;
+          background-color: none;
+          background: transparent;
+            > li > a,
+            > li > .ab-empty-item,
+            > li{
+              border-left: none;
+              border-left: 0;
+            }
+        }
+    }
+    .ab-top-menu > li:hover > .ab-item,
+    .ab-top-menu > li.hover > .ab-item,
+    .ab-top-menu > li > .ab-item:focus,
+    &.nojq .quicklinks .ab-top-menu > li > .ab-item:focus{
+      background: none;
+      background: transparent;
+    }
+    #wp-admin-bar-top-secondary{
+      li#wp-admin-bar-pro-site{
+        a{
+          span{
+            .btn !important;
+            .btn-success !important;
+          }
+        }
+      }
+    }
+}
+
+.hidden{
+  visibility: visible;
+}
+
+.postbox {
+  .border-radius(4px);
+  padding: 30px 10px 20px 10px;
+  margin-bottom: 20px;
+  background: #fff;
+    .hndle{
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      padding: 3px 7px;
+      font-size: 12px;
+      font-weight: bold;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      color: #9da0a4;
+      -webkit-border-radius: 4px 0 4px 0;
+      -moz-border-radius: 4px 0 4px 0;
+      border-radius: 4px 0 4px 0;
+    }
+    .handlediv{
+      position: absolute;
+      top: 2px;
+      right: 0;
+    }
+    &.closed{
+        .hndle{
+          top: 0;
+          left: 0;
+        }
+    }
+    h3{
+      font-size: 13px;
+    }
+}
+
+.widget-holder .widget-title h4{
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.metabox-holder h3{
+  font-size: 13px;
+}
+
+#post-body.columns-2 #postbox-container-1{
+  margin-right: -320px;
+  width: 300px;
+}
+#poststuff #post-body.columns-2{
+  margin-right: 320px;
+}
+
+[class^="icon-"]::before, [class*=" icon-"]::before {
+  display: none !important;
+  visibility: hidden;
+}
+
+li#wp-admin-bar-psts-status a{
+  color: #f89406;
+}
+li#wp-admin-bar-psts-status:hover a,
+li#wp-admin-bar-psts-status a:hover{
+  color: #df8505;
+}
+#wpadminbar li#wp-admin-bar-pro-site{
+  margin-top: -2px;
+}
+.wp-list-table.widefat.plugins .active{
+  background: #fff !important;
+  color: #333 !important;
+}
+ul.subsubsub li.active{
+  background: none !important;  background: transparent !important;
+}
+ul.subsubsub li.active a{
+  color: #5bb75b;
+}
+
+.widefat tr.status-order_received td a.mp_order_status,
+.widefat tr.status-order_paid td a.mp_order_status,
+.widefat tr.status-order_shipped td a.mp_order_status{
+  background: none !important;
+}
+
+.widefat a.mp_order_status{
+  padding-left: 0 !important;
+}
+#side-sortables #mp-single-statuses{
+  color: #fff;
+  font-size: 1px;
+}
+#side-sortables #mp-single-statuses span.received,
+#side-sortables #mp-single-statuses span.paid,
+#side-sortables #mp-single-statuses span.shipped,
+#side-sortables #mp-single-statuses span.closed{
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
