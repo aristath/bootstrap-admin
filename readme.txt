@@ -4,16 +4,17 @@ Donate link: http://aristeides.com/bootstrap-admin
 Tags: administration, admin theme, dashboard, bootstrap
 Requires at least: 3.4
 Tested up to: 3.4.1
-Stable tag: 4.3
+Stable tag: 0.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A clean, minimalistic administration theme inspired from Twitter's Bootstrap (http://twitter.github.com/bootstrap )
+A clean, minimalistic administration theme based on Twitter's Bootstrap
 
 == Description ==
 
 A clean, minimalistic administration theme implementing Twitter's Bootstrap.
-You can get it on github here: http://aristeides.com/bootstrap-admin
+You can watch the development on github: https://github.com/nerdzgr/bootstrap-admin
+If you want to learn more about bootstrap go ahead and take a look here: http://twitter.github.com/bootstrap
 
 This project was built for the http://magazi.org network of stores.
 This plugin will continue to be improved.
@@ -29,12 +30,26 @@ So far these things have been done:
 * Includes WPMUdev Pro-Sites optimizations
 * Includes WPMUdev MarketPress optimizations
 * Even more, and a lot more on the way!
+* Styling is done using LESS.
 
 If you like it and use it on your projects, please consider donating @ http://aristeides.com 
 
 == Installation ==
 
 Just copy to your plugins folder and activate (or Network activate) it.
+
+Styling is done using less. This Plugin includes phpless http://leafo.net/lessphp/ 
+If you want to use less when theming this plugin, you should open the config.php file and
+change this line
+
+`define('BOOTSTRAP_ADMIN_LESS_MODE', '0');`
+
+from '0' to '1'. 
+This will tell the less preprocessor to re-compile the stylesheet 
+every time a change is detected on our less file.
+When you're done theming, please change it back to '0' to speed-up your admin section.
+(though it's not resources-heavy, phpless is still one more script that runs. 
+If you are not theming using less, keep this option to '0'.) 
 
 == Screenshots ==
 
@@ -43,6 +58,9 @@ Just copy to your plugins folder and activate (or Network activate) it.
 
 
 == Changelog ==
+
+= 0.2 =
+* Implementing phpless and re-styling everything using less.
 
 = 0.1.2 =
 * Lots of styling
