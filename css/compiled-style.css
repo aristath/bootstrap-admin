@@ -5381,9 +5381,6 @@ input[type="button"] .badge,
   position: relative;
   top: -1px;
 }
-input.button-primary,
-button.button-primary,
-a.button-primary,
 input[type="file"],
 input[type="image"],
 input[type="submit"],
@@ -5394,6 +5391,11 @@ a.button,
   padding: 3px 9px;
   font-size: 12px;
   line-height: 18px;
+}
+input.button-primary,
+button.button-primary,
+a.button-primary {
+  padding: 4px 14px;
 }
 #minor-publishing-actions input,
 #minor-publishing-actions .preview,
