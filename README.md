@@ -1,11 +1,13 @@
-=== Bootstrap Admin ===
+Bootstrap Admin
+===============
 Donate link: http://aristeides.com/bootstrap-admin
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A clean, minimalistic administration theme inspired from Twitter's Bootstrap (http://twitter.github.com/bootstrap )
 
-== Description ==
+Description
+===============
 
 A clean, minimalistic administration theme implementing Twitter's Bootstrap.
 You can get it on github here: http://aristeides.com/bootstrap-admin
@@ -27,25 +29,7 @@ So far these things have been done:
 
 If you like it and use it on your projects, please consider donating @ http://aristeides.com 
 
-== Installation ==
+Installation
+===============
 
 Just copy to your plugins folder and activate (or Network activate) it.
-
-== Screenshots ==
-
-1. Fresh wordpress installation with the bootstrap admin enabled
-2. The submenu popovers
-
-
-== Changelog ==
-
-= 0.1.2 =
-* Lots of styling
-* ProSites "hacks"
-* MarketPress "hacks"
-
-= 0.1.1 =
-* Small styling bugfixes
-
-= 0.1 =
-* First version
