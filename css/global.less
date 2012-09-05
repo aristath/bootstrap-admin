@@ -10,11 +10,30 @@
 }
 
 table{
-  .table;
+  background-color: none;
+  background-color: transparent;
 }
 
 table.widefat{
   .table;
+}
+
+.widefat{border: 0; .table; .table-bordered;
+  tr{border: 0;
+    td{border: 0;
+    }
+  }
+}
+
+table.wp-list-table.widefat{
+  .table () !important;
+  .table-bordered () !important;
+  .table-striped () !important;
+  .table-hover () !important;
+    td.thumbnail{
+      .box-shadow(0 0 0);
+      .border-radius(0);
+    }
 }
 
 input, textarea{
