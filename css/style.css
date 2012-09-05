@@ -6393,3 +6393,14 @@ li#wp-admin-bar-psts-status a:hover{
 #wpadminbar li#wp-admin-bar-pro-site{
 	margin-top: -2px;
 }
+.wp-list-table.widefat.plugins .active{
+	background: #fff !important;
+	color: #333 !important;
+}
+ul.subsubsub li.active{
+	background: none !important;
+	background: transparent !important;
+}
+ul.subsubsub li.active a{
+	color: #5bb75b;
+}
