@@ -13,9 +13,16 @@ Author URI: http://aristeides.com
 // Less mode is mainly for development purposes.
 require_once 'includes/config.php';
 
+
+function bootstrap_admin_phpless(){
+	require_once( WP_PLUGIN_DIR . '/bootstrap-admin/includes/lessc.inc.php' );
+	lessc::ccompile( WP_PLUGIN_DIR . '/bootstrap-admin/css/global.less', WP_PLUGIN_DIR . '/bootstrap-admin/css/compiled-style.css');
+}
+
 function bootstrap_admin_styles() {
 	$less_mode = BOOTSTRAP_ADMIN_LESS_MODE;
 	if ($less_mode == 1){
+		bootstrap_admin_phpless();
 		wp_register_style('customized_bootstrap', plugins_url('css/compiled-style.css', __FILE__), false, '2.1.0');
 		wp_enqueue_style('customized_bootstrap');
 	} else {
