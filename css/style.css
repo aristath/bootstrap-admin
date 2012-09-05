@@ -1805,6 +1805,8 @@ legend + .control-group {
 .form-horizontal .form-actions {
   padding-left: 160px;
 }
+#side-sortables #mp-single-statuses span.current,
+#side-sortables #mp-single-statuses span a,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span,
 .plugins a.delete,
 #all-plugins-table .plugins a.delete,
@@ -1863,6 +1865,17 @@ input[type="button"],
   -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
 }
+#side-sortables #mp-single-statuses span.current,
+#side-sortables #mp-single-statuses span a:hover,
+#side-sortables #mp-single-statuses span a:active,
+#side-sortables #mp-single-statuses span a.active,
+#side-sortables #mp-single-statuses span a.disabled,
+#side-sortables #mp-single-statuses span a[disabled],
+#side-sortables #mp-single-statuses span.current:hover,
+#side-sortables #mp-single-statuses span.current:active,
+#side-sortables #mp-single-statuses span.current.active,
+#side-sortables #mp-single-statuses span.current.disabled,
+#side-sortables #mp-single-statuses span.current[disabled],
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span:hover,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span:active,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span.active,
@@ -1952,6 +1965,9 @@ a.button[disabled],
   background-color: #e6e6e6;
   *background-color: #d9d9d9;
 }
+#side-sortables #mp-single-statuses span a:active,
+#side-sortables #mp-single-statuses span a.active,
+#side-sortables #mp-single-statuses span.current,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span:active,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span.active,
 .plugins a.delete:active,
@@ -1991,6 +2007,7 @@ a.button.active,
 .btn:first-child {
   *margin-left: 0;
 }
+#side-sortables #mp-single-statuses span a:hover,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span:hover,
 .plugins a.delete:hover,
 #all-plugins-table .plugins a.delete:hover,
@@ -2020,6 +2037,7 @@ a.button:hover,
   -o-transition: background-position 0.1s linear;
   transition: background-position 0.1s linear;
 }
+#side-sortables #mp-single-statuses span a:focus,
 .plugins a.delete:focus,
 #all-plugins-table .plugins a.delete:focus,
 #search-plugins-table .plugins a.delete:focus,
@@ -2040,6 +2058,9 @@ a.button:focus,
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+#side-sortables #mp-single-statuses span.current,
+#side-sortables #mp-single-statuses span a:active,
+#side-sortables #mp-single-statuses span a.active,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span:active,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span.active,
 .plugins a.delete:active,
@@ -2082,6 +2103,8 @@ a.button:active,
   -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
   box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
 }
+#side-sortables #mp-single-statuses span a.disabled,
+#side-sortables #mp-single-statuses span a[disabled],
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span.disabled,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span[disabled],
 .plugins a.delete.disabled,
@@ -2165,6 +2188,10 @@ a.button,
   font-size: 11px;
   line-height: 16px;
 }
+#major-publishing-actions #mp-single-order-form #mp-single-order-buttons #publish.button-primary,
+#side-sortables #mp-single-statuses span.current,
+#side-sortables #mp-single-statuses span,
+#side-sortables #mp-single-statuses span a,
 .btn-block {
   display: block;
   width: 100%;
@@ -2203,6 +2230,7 @@ a.button,
   border-color: #c5c5c5;
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
 }
+#side-sortables #mp-single-statuses span a,
 input.button-primary,
 button.button-primary,
 a.button-primary,
@@ -2224,6 +2252,7 @@ a.button-primary,
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
+#side-sortables #mp-single-statuses span a:hover,
 input.button-primary:hover,
 button.button-primary:hover,
 a.button-primary:hover,
@@ -2353,6 +2382,7 @@ a.button-primary.active,
   background-color: #942a25 \9;
 }
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span,
+#major-publishing-actions #mp-single-order-form #mp-single-order-buttons #publish.button-primary,
 .btn-success {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -2371,9 +2401,14 @@ a.button-primary.active,
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
+#major-publishing-actions #mp-single-order-form #mp-single-order-buttons #publish.button-primary:hover,
+#major-publishing-actions #mp-single-order-form #mp-single-order-buttons #publish.button-primary:active,
+#major-publishing-actions #mp-single-order-form #mp-single-order-buttons #publish.button-primary.active,
+#major-publishing-actions #mp-single-order-form #mp-single-order-buttons #publish.button-primary.disabled,
+#major-publishing-actions #mp-single-order-form #mp-single-order-buttons #publish.button-primary[disabled],
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span:hover,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span:active,
-#wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span,.active,
+#wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span.active,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span.disabled,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span[disabled],
 .btn-success:hover,
@@ -2385,6 +2420,8 @@ a.button-primary.active,
   background-color: #51a351;
   *background-color: #499249;
 }
+#major-publishing-actions #mp-single-order-form #mp-single-order-buttons #publish.button-primary:active,
+#major-publishing-actions #mp-single-order-form #mp-single-order-buttons #publish.button-primary.active,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span:active,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span.active,
 .btn-success:active,
@@ -6422,3 +6459,18 @@ ul.subsubsub li.active a{
 .widefat a.mp_order_status{
 	padding-left: 0 !important;
 }
+#side-sortables #mp-single-statuses{
+	color: #fff;
+	font-size: 1px;
+}
+#side-sortables #mp-single-statuses span.received,
+#side-sortables #mp-single-statuses span.paid,
+#side-sortables #mp-single-statuses span.shipped,
+#side-sortables #mp-single-statuses span.closed{
+	font-size: 12px;
+	color: #333;
+	text-align: center;
+	display: block;
+	width: 100%;
+}
+#major-publishing-actions #mp-single-order-form #mp-single-order-buttons #publish.button-primary
