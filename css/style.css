@@ -4146,6 +4146,7 @@ a.thumbnail:hover {
   padding: 9px;
   color: #555555;
 }
+.update-nag,
 .wrap div.updated,
 .message,
 .alert {
@@ -6400,8 +6401,7 @@ li#wp-admin-bar-psts-status a:hover{
 	color: #333 !important;
 }
 ul.subsubsub li.active{
-	background: none !important;
-	background: transparent !important;
+	background: none !important;	background: transparent !important;
 }
 ul.subsubsub li.active a{
 	color: #5bb75b;
@@ -6412,3 +6412,13 @@ ul.subsubsub li.active a{
 	margin-left: auto;
 	margin-right: auto;
 }*/
+
+.widefat tr.status-order_received td a.mp_order_status,
+.widefat tr.status-order_paid td a.mp_order_status,
+.widefat tr.status-order_shipped td a.mp_order_status{
+	background: none !important;
+}
+
+.widefat a.mp_order_status{
+	padding-left: 0 !important;
+}
