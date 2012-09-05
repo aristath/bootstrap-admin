@@ -433,9 +433,21 @@ a.rsswidget,
   margin-top: -9px;
 }
 
-#message.updated{
+#message.updated,
+.plugin-update-tr .update-message,
+div.error{
   .alert;
 }
+
+.plugin-update-tr .update-message{
+  .alert-info
+}
+
 div.error{
-  .alert; .alert-error;
+  .alert-error;
+}
+
+table.plugins.widefat tr.inactive td.plugin-title,
+table.plugins.widefat tr.inactive td.column-description p{
+  .muted;
 }

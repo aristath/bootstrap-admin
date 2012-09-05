@@ -6032,17 +6032,8 @@ a.rsswidget,
 #posts-filter .button {
   margin-top: -9px;
 }
-#message.updated {
-  padding: 8px 35px 8px 14px;
-  margin-bottom: 20px;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-  background-color: #fcf8e3;
-  border: 1px solid #fbeed5;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  color: #c09853;
-}
+#message.updated,
+.plugin-update-tr .update-message,
 div.error {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
@@ -6053,7 +6044,18 @@ div.error {
   -moz-border-radius: 4px;
   border-radius: 4px;
   color: #c09853;
+}
+.plugin-update-tr .update-message {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #3a87ad;
+}
+div.error {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
+}
+table.plugins.widefat tr.inactive td.plugin-title,
+table.plugins.widefat tr.inactive td.column-description p {
+  color: #999;
 }
