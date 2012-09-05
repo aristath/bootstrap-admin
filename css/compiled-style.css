@@ -6027,6 +6027,7 @@ a.rsswidget,
 }
 #doaction,
 #doaction2,
-#post-query-submit {
+#post-query-submit,
+#posts-filter .button {
   margin-top: -9px;
 }
