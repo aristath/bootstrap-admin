@@ -5,7 +5,7 @@ Plugin Name: Bootstrap Admin
 Plugin URI: http://aristeides.com
 Description: Bootstrap Admin Theme - Upload and Activate.
 Author: Aristeides Stathopoulos
-Version: 0.2
+Version: 0.2.1
 Author URI: http://aristeides.com
 */
 
@@ -16,7 +16,7 @@ require_once 'includes/config.php';
 
 function bootstrap_admin_phpless(){
 	require_once( WP_PLUGIN_DIR . '/bootstrap-admin/includes/lessc.inc.php' );
-	lessc::ccompile( WP_PLUGIN_DIR . '/bootstrap-admin/css/global.less', WP_PLUGIN_DIR . '/bootstrap-admin/css/style.css');
+	lessc::ccompile( WP_PLUGIN_DIR . '/bootstrap-admin/css/global.less', WP_PLUGIN_DIR . '/bootstrap-admin/css/compiled-style.css');
 }
 
 function bootstrap_admin_styles() {
@@ -24,7 +24,7 @@ function bootstrap_admin_styles() {
 	if ($less_mode == 1){
 		bootstrap_admin_phpless();
 	}
-	wp_register_style('customized_bootstrap', plugins_url('css/style.css', __FILE__), false, '2.1.0');
+	wp_register_style('customized_bootstrap', plugins_url('css/compiled-style.css', __FILE__), false, '2.1.0');
 	wp_enqueue_style('customized_bootstrap');
 }
 add_action('admin_enqueue_scripts', 'bootstrap_admin_styles');

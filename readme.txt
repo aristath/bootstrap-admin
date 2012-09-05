@@ -59,6 +59,9 @@ If you are not theming using less, keep this option to '0'.)
 
 == Changelog ==
 
+= 0.2.1 =
+* Bugfix. Some users reported css was not being applied on 0.2
+
 = 0.2 =
 * Implementing phpless and re-styling everything using less.
 
