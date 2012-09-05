@@ -6106,7 +6106,9 @@ body.wpmu-dev_page_wpmudev-themes div#wpcontent,
 }
 #adminmenu li.wp-has-submenu.wp-menu-open .wp-submenu{
 	border-right: 1px solid #e5e5e5;
-	margin: 0 -1px -1px;
+	border-left: 1px solid #e5e5e5;
+	width: 198px;
+	margin: 0 0 -1px;
 }
 #adminmenu li.menu-top a.menu-top{
 	font-size: 14px;
@@ -6403,4 +6405,10 @@ ul.subsubsub li.active{
 }
 ul.subsubsub li.active a{
 	color: #5bb75b;
+}
+
+#wpwrap{
+	width: 99%;
+	margin-left: auto;
+	margin-right: auto;
 }
