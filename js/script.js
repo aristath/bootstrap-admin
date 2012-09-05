@@ -47,3 +47,4 @@ jQuery(document).ready( function() {
 		trigger: 'hover'
 	});
 });
+

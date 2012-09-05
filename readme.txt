@@ -25,6 +25,9 @@ So far these things have been done:
 * Bootstrap Icons for a lot of things
 * Default WordPress forms theming
 * Buttons theming
+* Postboxes theming
+* Includes WPMUdev Pro-Sites optimizations
+* Includes WPMUdev MarketPress optimizations
 * Even more, and a lot more on the way!
 
 If you like it and use it on your projects, please consider donating @ http://aristeides.com 
@@ -33,7 +36,18 @@ If you like it and use it on your projects, please consider donating @ http://ar
 
 Just copy to your plugins folder and activate (or Network activate) it.
 
+== Screenshots ==
+
+1. Fresh wordpress installation with the bootstrap admin enabled
+2. The submenu popovers
+
+
 == Changelog ==
+
+= 0.1.2 =
+* Lots of styling
+* ProSites "hacks"
+* MarketPress "hacks"
 
 = 0.1.1 =
 * Small styling bugfixes
