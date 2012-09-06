@@ -6034,7 +6034,14 @@ a.rsswidget,
 #posts-filter .button {
   margin-top: -9px;
 }
+div.updated,
 #message.updated,
+#message2.updated,
+#message3.updated,
+#message4.updated,
+#message5.updated,
+#message6.updated,
+#message7.updated,
 .plugin-update-tr .update-message,
 div.error {
   padding: 8px 35px 8px 14px;
@@ -6080,4 +6087,7 @@ input[type="color"],
 .uneditable-input {
   height: auto;
   min-height: 20px;
+}
+#mp-target-countries br {
+  display: none;
 }
