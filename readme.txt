@@ -4,7 +4,7 @@ Donate link: http://aristeides.com/bootstrap-admin
 Tags: administration, admin theme, dashboard, bootstrap
 Requires at least: 3.4
 Tested up to: 3.4.1
-Stable tag: 0.2
+Stable tag: 0.2.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,7 @@ So far these things have been done:
 * Includes WPMUdev MarketPress optimizations
 * Even more, and a lot more on the way!
 * Styling is done using LESS.
+* Implements [chosen js](http://harvesthq.github.com/chosen/ "chosen js")
 
 If you like it and use it on your projects, please consider donating @ http://aristeides.com 
 
@@ -48,8 +49,12 @@ from '0' to '1'.
 This will tell the less preprocessor to re-compile the stylesheet 
 every time a change is detected on our less file.
 When you're done theming, please change it back to '0' to speed-up your admin section.
-(though it's not resources-heavy, phpless is still one more script that runs. 
-If you are not theming using less, keep this option to '0'.) 
+(though it's not resources-heavy, phpless is still one more script that runs). 
+If you are not theming using less, keep this option to '0'.
+
+To disable chosen js, you can change
+`define('BOOTSTRAP_ADMIN_CHOSEN_JS', '1');'
+from '1' to '0'.
 
 == Screenshots ==
 
@@ -58,6 +63,9 @@ If you are not theming using less, keep this option to '0'.)
 
 
 == Changelog ==
+
+= 0.2.2 =
+* Implemented [chosen js](http://harvesthq.github.com/chosen/ "chosen js")
 
 = 0.2.1 =
 * Bugfix. Some users reported css was not being applied on 0.2

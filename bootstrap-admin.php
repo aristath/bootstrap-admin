@@ -5,7 +5,7 @@ Plugin Name: Bootstrap Admin
 Plugin URI: http://aristeides.com
 Description: Bootstrap Admin Theme - Upload and Activate.
 Author: Aristeides Stathopoulos
-Version: 0.2.1
+Version: 0.2.2
 Author URI: http://aristeides.com
 */
 
