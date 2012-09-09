@@ -6034,6 +6034,8 @@ a.rsswidget,
 #posts-filter .button {
   margin-top: -9px;
 }
+#update-nag,
+.update-nag,
 div.updated,
 #message.updated,
 #message2.updated,
@@ -6094,4 +6096,3 @@ input[type="color"],
 .chzn-search input[type="text"] {
   width: 100% !important;
 }
-
