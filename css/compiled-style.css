@@ -7001,7 +7001,8 @@ label {
 .icon32.fonticon {
   margin: 16px 8px 0 0;
 }
-.updated.fade {
+.updated.fade,
+.error.fade {
   opacity: 1;
 }
 .wp-menu-name {
