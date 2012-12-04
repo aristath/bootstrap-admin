@@ -7014,6 +7014,9 @@ a.wp-menu-open .wp-menu-name:before,
 .current .wp-menu-name:before {
   color: #fff;
 }
+#adminmenu li .wp-submenu-wrap {
+  border: 0px;
+}
 .menu-icon-dashboard .wp-menu-name:before {
   margin-right: 5px;
   font-family: 'FontAwesome';

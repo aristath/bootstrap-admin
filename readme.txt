@@ -68,6 +68,7 @@ from '0' to '1'.
 == Changelog ==
 
 = 1.0 =
+* CAUTION: ONLY UPDATE TO 1.0 IF YOU ARE USING WORDPRESS 3.5 AND ABOVE
 * Bugfixes
 * Compatibility with WordPress 3.5
 * Moved icons from jquery to css implementation
