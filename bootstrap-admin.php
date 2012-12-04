@@ -2,10 +2,10 @@
 
 /*
 Plugin Name: Bootstrap Admin
-Plugin URI: http://aristeides.com
-Description: Bootstrap Admin Theme - Upload and Activate.
+Plugin URI: http://shoestrap.org
+Description: Bootstrap Admin Theme
 Author: Aristeides Stathopoulos
-Version: 0.2.2
+Version: 1.0
 Author URI: http://aristeides.com
 */
 
