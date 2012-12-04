@@ -405,11 +405,6 @@ body.folded .wp-menu-image{
   margin-right: 320px;
 }
 
-[class^="icon-"]::before, [class*=" icon-"]::before {
-  display: none !important;
-  visibility: hidden;
-}
-
 li#wp-admin-bar-psts-status a{
   color: #f89406;
 }
@@ -570,10 +565,13 @@ label{display: inline-block;}
   height: auto;
 }
 
+.icon32.fonticon{margin: 16px 8px 0 0;}
+
+.updated.fade{opacity: 1;}
+
 .wp-menu-name{text-shadow: none;}
 .wp-menu-name:before { text-shadow: none; color: #333; }
 a.wp-menu-open .wp-menu-name:before, .current .wp-menu-name:before{color: #fff;}
-#adminmenu li .wp-submenu-wrap{border: 0px;} // compatibility with wordpress 3.4.2
 
 .menu-icon-dashboard .wp-menu-name:before           { margin-right: 5px; font-family: 'FontAwesome'; content: "\f0e4" }
 .menu-icon-post .wp-menu-name:before                { margin-right: 5px; font-family: 'FontAwesome'; content: "\f040" }
