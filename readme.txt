@@ -16,6 +16,7 @@ A clean, minimalistic administration theme implementing Twitter's Bootstrap.
 If you want to learn more about bootstrap go ahead and take a look here: http://twitter.github.com/bootstrap
 
 This project was built by http://shoestrap.org
+You can contribute by helping out in github: https://github.com/aristath/bootstrap-admin
 
 This plugin includes:
 
