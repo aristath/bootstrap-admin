@@ -6796,7 +6796,7 @@ body.folded .wp-menu-image {
   top: -1px;
   left: -1px;
   padding: 3px 7px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   background-color: #f5f5f5;
   border: 1px solid #ddd;
@@ -6804,6 +6804,7 @@ body.folded .wp-menu-image {
   -webkit-border-radius: 4px 0 4px 0;
   -moz-border-radius: 4px 0 4px 0;
   border-radius: 4px 0 4px 0;
+  line-height: 16px;
 }
 .postbox .handlediv {
   position: absolute;
