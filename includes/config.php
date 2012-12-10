@@ -4,4 +4,4 @@
 define('BOOTSTRAP_ADMIN_LESS_MODE', '0');
 
 // Set to 1 to use chosen js for select elements
-define('BOOTSTRAP_ADMIN_CHOSEN_JS', '1');
+define('BOOTSTRAP_ADMIN_CHOSEN_JS', '0');
