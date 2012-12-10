@@ -6818,7 +6818,8 @@ body.folded .wp-menu-image {
 .postbox h3 {
   font-size: 13px;
 }
-.widget-holder .widget-title h4 {
+.widget-holder .widget-title h4,
+.widget-title h4 {
   font-size: 14px;
   font-weight: normal;
 }
@@ -6992,6 +6993,9 @@ label {
 #search-plugins input[name="s"] {
   float: none;
   height: auto;
+}
+div.sidebar-name h3 {
+  line-height: 15px;
 }
 .icon32.fonticon {
   margin: 16px 8px 0 0;
