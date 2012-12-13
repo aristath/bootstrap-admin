@@ -272,9 +272,6 @@ li.wp-menu-separator{
 th#stock.column-stock{width: 95px !important;}
 th#sales.column-sales{width: 95px !important;}
 
-.wp-menu-image{
-  display: none;
-}
 body.folded .wp-menu-image{
   display: block;
 }
@@ -510,34 +507,78 @@ div.sidebar-name h3{line-height: 15px;}
 .updated.fade, .error.fade{opacity: 1;}
 
 .wp-menu-name{text-shadow: none;}
-.wp-menu-name:before { text-shadow: none; color: #333; }
-a.wp-menu-open .wp-menu-name:before, .current .wp-menu-name:before{color: #fff;}
+.wp-menu-image:before { text-shadow: none; color: #333; }
+a.wp-menu-open .wp-menu-image:before, .current .wp-menu-image:before{color: #fff;}
 
-.menu-icon-dashboard .wp-menu-name:before           { margin-right: 5px; font-family: 'FontAwesome'; content: "\f0e4" }
-.menu-icon-post .wp-menu-name:before                { margin-right: 5px; font-family: 'FontAwesome'; content: "\f040" }
-.menu-icon-page .wp-menu-name:before                { margin-right: 5px; font-family: 'FontAwesome'; content: "\f044" }
-.menu-icon-media .wp-menu-name:before               { margin-right: 5px; font-family: 'FontAwesome'; content: "\f03d" }
-.menu-icon-links .wp-menu-name:before               { margin-right: 5px; font-family: 'FontAwesome'; content: "\f08e" }
-.menu-icon-comments .wp-menu-name:before            { margin-right: 5px; font-family: 'FontAwesome'; content: "\f0e6" }
-.menu-icon-appearance .wp-menu-name:before          { margin-right: 5px; font-family: 'FontAwesome'; content: "\f042" }
-.menu-icon-plugins .wp-menu-name:before             { margin-right: 5px; font-family: 'FontAwesome'; content: "\f076" }
-.menu-icon-users .wp-menu-name:before               { margin-right: 5px; font-family: 'FontAwesome'; content: "\f007" }
-.menu-icon-tools .wp-menu-name:before               { margin-right: 5px; font-family: 'FontAwesome'; content: "\f0ad" }
-.menu-icon-settings .wp-menu-name:before            { margin-right: 5px; font-family: 'FontAwesome'; content: "\f085" }
-.menu-icon-product .wp-menu-name:before             { margin-right: 5px; font-family: 'FontAwesome'; content: "\f07a" }
-.toplevel_page_wpmudev .wp-menu-name:before         { margin-right: 5px; font-family: 'FontAwesome'; content: "\f0b1" }
-.toplevel_page_incsub_support .wp-menu-name:before  { margin-right: 5px; font-family: 'FontAwesome'; content: "\f0a1" }
-.menu-icon-site .wp-menu-name:before                { margin-right: 5px; font-family: 'FontAwesome'; content: "\f00b" }
-.toplevel_page_psts-checkout .wp-menu-name:before   { margin-right: 5px; font-family: 'FontAwesome'; content: "\f08a" }
-.toplevel_page_cp_main .wp-menu-name:before         { margin-right: 5px; font-family: 'FontAwesome'; content: "\f0b0" }
-.toplevel_page_mp_st .wp-menu-name:before           { margin-right: 5px; font-family: 'FontAwesome'; content: "\f012" }
-.toplevel_page_customize .wp-menu-name:before       { margin-right: 5px; font-family: 'FontAwesome'; content: "\f043" }
-.toplevel_page_tools .wp-menu-name:before           { margin-right: 5px; font-family: 'FontAwesome'; content: "\f0ac" }
-.toplevel_page_logout .wp-menu-name:before          { margin-right: 5px; font-family: 'FontAwesome'; content: "\f08b" }
-.toplevel_page_business_tools .wp-menu-name:before  { margin-right: 5px; font-family: 'FontAwesome'; content: "\f041" }
-.toplevel_page_jetpack .wp-menu-name:before         { margin-right: 5px; font-family: 'FontAwesome'; content: "\f009" }
-.menu-icon-feedback .wp-menu-name:before            { margin-right: 5px; font-family: 'FontAwesome'; content: "\f045" }
-.toplevel_page_wpcf7 .wp-menu-name:before           { margin-right: 5px; font-family: 'FontAwesome'; content: "\f0e0" }
-.toplevel_page_newsletter .wp-menu-name:before      { margin-right: 5px; font-family: 'FontAwesome'; content: "\f01c" }
-.toplevel_page_nrelate-main .wp-menu-name:before    { margin-right: 5px; font-family: 'FontAwesome'; content: "\f07e" }
-.toplevel_page_wdfb .wp-menu-name:before            { margin-right: 5px; font-family: 'FontAwesome'; content: "\f082" }
+.menu-icon-dashboard,
+.menu-icon-post,
+.menu-icon-page,
+.menu-icon-media,
+.menu-icon-links,
+.menu-icon-comments,
+.menu-icon-appearance,
+.menu-icon-plugins,
+.menu-icon-users,
+.menu-icon-tools,
+.menu-icon-settings,
+.menu-icon-product,
+.toplevel_page_wpmudev,
+.toplevel_page_incsub_support,
+.menu-icon-site,
+.toplevel_page_psts-checkout,
+.toplevel_page_cp_main,
+.toplevel_page_mp_st,
+.toplevel_page_customize,
+.toplevel_page_tools,
+.toplevel_page_logout,
+.toplevel_page_business_tools,
+.toplevel_page_jetpack,
+.menu-icon-feedback,
+.toplevel_page_wpcf7,
+.toplevel_page_newsletter,
+.toplevel_page_nrelate-main,
+.toplevel_page_wdfb{
+  .wp-menu-image{
+    background-image: none !important;
+    position: absolute;
+    top: 8px;
+    left: 7px;
+      &:before{
+        margin-right: 5px;
+        font-family: 'FontAwesome';
+        font-size: 18px;
+      }
+  }
+  div.wp-menu-name{
+    padding-left: 30px !important;
+  }
+}
+
+.menu-icon-dashboard .wp-menu-image:before          { content: "\f0e4"; }
+.menu-icon-post .wp-menu-image:before               { content: "\f040"; }
+.menu-icon-page .wp-menu-image:before               { content: "\f044"; }
+.menu-icon-media .wp-menu-image:before              { content: "\f03d"; }
+.menu-icon-links .wp-menu-image:before              { content: "\f08e"; }
+.menu-icon-comments .wp-menu-image:before           { content: "\f0e6"; }
+.menu-icon-appearance .wp-menu-image:before         { content: "\f042"; }
+.menu-icon-plugins .wp-menu-image:before            { content: "\f076"; }
+.menu-icon-users .wp-menu-image:before              { content: "\f007"; }
+.menu-icon-tools .wp-menu-image:before              { content: "\f0ad"; }
+.menu-icon-settings .wp-menu-image:before           { content: "\f085"; }
+.menu-icon-product .wp-menu-image:before            { content: "\f07a"; }
+.toplevel_page_wpmudev .wp-menu-image:before        { content: "\f0b1"; }
+.toplevel_page_incsub_support .wp-menu-image:before { content: "\f0a1"; }
+.menu-icon-site .wp-menu-image:before               { content: "\f00b"; }
+.toplevel_page_psts-checkout .wp-menu-image:before  { content: "\f08a"; }
+.toplevel_page_cp_main .wp-menu-image:before        { content: "\f0b0"; }
+.toplevel_page_mp_st .wp-menu-image:before          { content: "\f012"; }
+.toplevel_page_customize .wp-menu-image:before      { content: "\f043"; }
+.toplevel_page_tools .wp-menu-image:before          { content: "\f0ac"; }
+.toplevel_page_logout .wp-menu-image:before         { content: "\f08b"; }
+.toplevel_page_business_tools .wp-menu-image:before { content: "\f041"; }
+.toplevel_page_jetpack .wp-menu-image:before        { content: "\f009"; }
+.menu-icon-feedback .wp-menu-image:before           { content: "\f045"; }
+.toplevel_page_wpcf7 .wp-menu-image:before          { content: "\f0e0"; }
+.toplevel_page_newsletter .wp-menu-image:before     { content: "\f01c"; }
+.toplevel_page_nrelate-main .wp-menu-image:before   { content: "\f07e"; }
+.toplevel_page_wdfb .wp-menu-image:before           { content: "\f082"; }
