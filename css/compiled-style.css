@@ -7130,10 +7130,11 @@ a.wp-menu-open .wp-menu-image:before,
   content: "\f040";
 }
 .menu-icon-page .wp-menu-image:before {
-  content: "\f044";
+  content: "\f016";
+  font-size: 20px;
 }
 .menu-icon-media .wp-menu-image:before {
-  content: "\f03d";
+  content: "\f03e";
 }
 .menu-icon-links .wp-menu-image:before {
   content: "\f08e";
@@ -7142,7 +7143,7 @@ a.wp-menu-open .wp-menu-image:before,
   content: "\f075";
 }
 .menu-icon-appearance .wp-menu-image:before {
-  content: "\f042";
+  content: "\f06e";
 }
 .menu-icon-plugins .wp-menu-image:before {
   content: "\f076";

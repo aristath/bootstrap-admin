@@ -68,6 +68,13 @@ from '0' to '1'.
 
 == Changelog ==
 
+= 1.03 =
+* Supports collapsed mode
+* Added icons for bbpress
+
+= 1.02 =
+* Bugfixes
+
 = 1.0 =
 * CAUTION: ONLY UPDATE TO 1.0 IF YOU ARE USING WORDPRESS 3.5 AND ABOVE
 * Bugfixes
