@@ -104,6 +104,7 @@ input, textarea{
 input[type="text"]{
   height: auto;
 }
+.button.media-button,
 .wp-core-ui .button,
 .wp-core-ui .button-primary,
 #side-sortables #mp-single-statuses span.current,
@@ -130,7 +131,9 @@ input[type="image"].button,
 input[type="submit"].button,
 input[type="reset"].button,
 input[type="button"].button{
-  .btn; width: auto; height: auto;
+  .btn;
+  width: auto;
+  height: auto;
 }
 
 input[type="file"],
@@ -166,6 +169,7 @@ a.button-primary{
   .btn-block;
 }
 
+button.media-button.button-primary,
 .wp-core-ui .button-primary,
 a.button-primary.welcome-button,
 input[type="submit"],
@@ -175,7 +179,7 @@ input.button-primary,
 button.button-primary,
 input.button.button-primary,
 a.button-primary{
-  .btn-primary() !important;
+  .btn-primary;
 }
 
 .plugins a.delete,
@@ -279,14 +283,14 @@ li.wp-menu-separator{
     }
 }
 
-.widefat th#thumbnail{width: 90px !important;}
-th#stock.column-stock{width: 95px !important;}
-th#sales.column-sales{width: 95px !important;}
+.widefat th#thumbnail{ width: 90px !important; }
+th#stock.column-stock{ width: 95px !important; }
+th#sales.column-sales{ width: 95px !important; }
 
 body.folded .wp-menu-image{
   display: block;
 }
-#product_category-adder h4{font-size: 15px;}
+#product_category-adder h4{ font-size: 15px; }
 
 #adminmenu li.menu-top.wp-not-current-submenu .wp-submenu{
   display: none !important;
@@ -370,7 +374,8 @@ li#wp-admin-bar-psts-status a:hover{
   color: #333 !important;
 }
 ul.subsubsub li.active{
-  background: none !important;  background: transparent !important;
+  background: none !important;
+  background: transparent !important;
 }
 ul.subsubsub li.active a{
   color: #5bb75b;
@@ -502,6 +507,17 @@ input[type="color"],
 }
 
 label{display: inline-block;}
+
+.attachments-browser,
+.selection-view{
+  .attachments{
+    .thumbnail{
+      padding: 0;
+      .border-radius(0px);
+      border: 0;
+    }
+  }
+}
 
 .plugins .inactive td, .plugins .inactive th, .plugins .active td, .plugins .active th{border-color: #dedede; border-bottom: 0;}
 
