@@ -104,7 +104,8 @@ input, textarea{
 input[type="text"]{
   height: auto;
 }
-
+.wp-core-ui .button,
+.wp-core-ui .button-primary,
 #side-sortables #mp-single-statuses span.current,
 #side-sortables #mp-single-statuses span a,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span,
@@ -142,6 +143,7 @@ a.button,
   .btn-small;
 }
 
+.wp-core-ui .button-primary,
 input.button-primary,
 button.button-primary,
 a.button-primary{
@@ -164,6 +166,7 @@ a.button-primary{
   .btn-block;
 }
 
+.wp-core-ui .button-primary,
 a.button-primary.welcome-button,
 input[type="submit"],
 input[type="submit"].button-primary,
@@ -172,7 +175,7 @@ input.button-primary,
 button.button-primary,
 input.button.button-primary,
 a.button-primary{
-  .btn-primary;
+  .btn-primary() !important;
 }
 
 .plugins a.delete,

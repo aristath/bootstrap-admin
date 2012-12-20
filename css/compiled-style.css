@@ -5884,6 +5884,8 @@ textarea {
 input[type="text"] {
   height: auto;
 }
+.wp-core-ui .button,
+.wp-core-ui .button-primary,
 #side-sortables #mp-single-statuses span.current,
 #side-sortables #mp-single-statuses span a,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span,
@@ -5948,6 +5950,10 @@ input[type="button"].button {
   width: auto;
   height: auto;
 }
+.wp-core-ui .button [class^="icon-"],
+.wp-core-ui .button [class*=" icon-"],
+.wp-core-ui .button-primary [class^="icon-"],
+.wp-core-ui .button-primary [class*=" icon-"],
 #side-sortables #mp-single-statuses span.current [class^="icon-"],
 #side-sortables #mp-single-statuses span.current [class*=" icon-"],
 #side-sortables #mp-single-statuses span a [class^="icon-"],
@@ -5998,6 +6004,16 @@ input[type="button"].button [class^="icon-"],
 input[type="button"].button [class*=" icon-"] {
   line-height: .9em;
 }
+.wp-core-ui .button:hover,
+.wp-core-ui .button:active,
+.wp-core-ui .button.active,
+.wp-core-ui .button.disabled,
+.wp-core-ui .button[disabled],
+.wp-core-ui .button-primary:hover,
+.wp-core-ui .button-primary:active,
+.wp-core-ui .button-primary.active,
+.wp-core-ui .button-primary.disabled,
+.wp-core-ui .button-primary[disabled],
 #side-sortables #mp-single-statuses span.current:hover,
 #side-sortables #mp-single-statuses span.current:active,
 #side-sortables #mp-single-statuses span.current.active,
@@ -6122,6 +6138,10 @@ input[type="button"].button[disabled] {
   background-color: #e6e6e6;
   *background-color: #d9d9d9;
 }
+.wp-core-ui .button:active,
+.wp-core-ui .button.active,
+.wp-core-ui .button-primary:active,
+.wp-core-ui .button-primary.active,
 #side-sortables #mp-single-statuses span.current:active,
 #side-sortables #mp-single-statuses span.current.active,
 #side-sortables #mp-single-statuses span a:active,
@@ -6172,6 +6192,8 @@ input[type="button"].button:active,
 input[type="button"].button.active {
   background-color: #cccccc \9;
 }
+.wp-core-ui .button:first-child,
+.wp-core-ui .button-primary:first-child,
 #side-sortables #mp-single-statuses span.current:first-child,
 #side-sortables #mp-single-statuses span a:first-child,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span:first-child,
@@ -6198,6 +6220,8 @@ input[type="reset"].button:first-child,
 input[type="button"].button:first-child {
   *margin-left: 0;
 }
+.wp-core-ui .button:hover,
+.wp-core-ui .button-primary:hover,
 #side-sortables #mp-single-statuses span.current:hover,
 #side-sortables #mp-single-statuses span a:hover,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span:hover,
@@ -6232,6 +6256,8 @@ input[type="button"].button:hover {
   -o-transition: background-position .1s linear;
   transition: background-position .1s linear;
 }
+.wp-core-ui .button:focus,
+.wp-core-ui .button-primary:focus,
 #side-sortables #mp-single-statuses span.current:focus,
 #side-sortables #mp-single-statuses span a:focus,
 #wpadminbar #wp-admin-bar-top-secondary li#wp-admin-bar-pro-site a span:focus,
@@ -6260,6 +6286,10 @@ input[type="button"].button:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+.wp-core-ui .button.active,
+.wp-core-ui .button:active,
+.wp-core-ui .button-primary.active,
+.wp-core-ui .button-primary:active,
 #side-sortables #mp-single-statuses span.current.active,
 #side-sortables #mp-single-statuses span.current:active,
 #side-sortables #mp-single-statuses span a.active,
@@ -6316,6 +6346,10 @@ input[type="button"].button:active {
   -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
   box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
 }
+.wp-core-ui .button.disabled,
+.wp-core-ui .button[disabled],
+.wp-core-ui .button-primary.disabled,
+.wp-core-ui .button-primary[disabled],
 #side-sortables #mp-single-statuses span.current.disabled,
 #side-sortables #mp-single-statuses span.current[disabled],
 #side-sortables #mp-single-statuses span a.disabled,
@@ -6373,6 +6407,10 @@ input[type="button"].button[disabled] {
   -moz-box-shadow: none;
   box-shadow: none;
 }
+.wp-core-ui .button .label,
+.wp-core-ui .button .badge,
+.wp-core-ui .button-primary .label,
+.wp-core-ui .button-primary .badge,
 #side-sortables #mp-single-statuses span.current .label,
 #side-sortables #mp-single-statuses span.current .badge,
 #side-sortables #mp-single-statuses span a .label,
@@ -6435,6 +6473,7 @@ a.button,
   font-size: 12px;
   line-height: 18px;
 }
+.wp-core-ui .button-primary,
 input.button-primary,
 button.button-primary,
 a.button-primary {
@@ -6476,6 +6515,7 @@ a.button-primary {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.wp-core-ui .button-primary,
 a.button-primary.welcome-button,
 input[type="submit"],
 input[type="submit"].button-primary,
@@ -6499,6 +6539,11 @@ a.button-primary {
   *background-color: #0044cc;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
+.wp-core-ui .button-primary:hover,
+.wp-core-ui .button-primary:active,
+.wp-core-ui .button-primary.active,
+.wp-core-ui .button-primary.disabled,
+.wp-core-ui .button-primary[disabled],
 a.button-primary.welcome-button:hover,
 a.button-primary.welcome-button:active,
 a.button-primary.welcome-button.active,
@@ -6543,6 +6588,8 @@ a.button-primary[disabled] {
   background-color: #0044cc;
   *background-color: #003bb3;
 }
+.wp-core-ui .button-primary:active,
+.wp-core-ui .button-primary.active,
 a.button-primary.welcome-button:active,
 a.button-primary.welcome-button.active,
 input[type="submit"]:active,
@@ -6561,6 +6608,7 @@ a.button-primary:active,
 a.button-primary.active {
   background-color: #003399 \9;
 }
+.wp-core-ui .button-primary .caret,
 a.button-primary.welcome-button .caret,
 input[type="submit"] .caret,
 input[type="submit"].button-primary .caret,
