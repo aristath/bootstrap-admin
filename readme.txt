@@ -4,7 +4,7 @@ Donate link: http://aristeides.com/bootstrap-admin
 Tags: administration, administration theme, admin theme, dashboard, bootstrap
 Requires at least: 3.5
 Tested up to: 3.5
-Stable tag: 1.0
+Stable tag: 1.05
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,31 +13,18 @@ A clean, minimalistic administration theme based on Twitter's Bootstrap
 == Description ==
 
 A clean, minimalistic administration theme implementing Twitter's Bootstrap.
-If you want to learn more about bootstrap go ahead and take a look here: http://twitter.github.com/bootstrap
+Project was built by http://shoestrap.org
 
-This project was built by http://shoestrap.org
 You can contribute by helping out in github: https://github.com/aristath/bootstrap-admin
 
-This plugin includes:
+This plugin will completely re-style your WordPress admin area, offering a cleaner experience.
+We 've included theming for most of the things that we could think of.
+If however you find something missing, don't hesitate to tell us about it @ http://bootstrap-commerce.com/forums/forum/bootstrap-admin/
+We welcome all suggestions!
 
-* General styling of the wordpress admin area
-* Admin menu sub-menus as bootstrap popovers (they're actually very beautiful!)
-* Bootstrap Icons for a lot of things (using a bootstrap icon font)
-* Default WordPress forms theming
-* Buttons theming
-* Postboxes theming
-* Includes WPMUdev Pro-Sites optimizations
-* Includes WPMUdev MarketPress optimizations
-* Even more, and a lot more on the way!
-* Styling is done using LESS.
-* Implements [chosen js](http://harvesthq.github.com/chosen/ "chosen js")
+We 've included icons for all core menus as well as a few extras, but if you find yourself wanting more, you can make a suggestion at the link mentioned above.
 
-Note: chosen.js is disabled by default. To enable it, open the 'includes/config.php' file and set
-`define('BOOTSTRAP_ADMIN_CHOSEN_JS', '1');'
-from '1' to '0'.
-
-
-If you like it and use it on your projects, please consider donating @ http://aristeides.com 
+If you like this plugin and use it on your projects, please consider donating @ http://aristeides.com 
 
 == Installation ==
 
@@ -67,6 +54,14 @@ from '0' to '1'.
 
 
 == Changelog ==
+
+= 1.05 =
+* Better styling for buttons
+* override WordPress's wp_default_styles function
+* tags as labels
+* set featured image link as large button
+* the "add new category" link is now a button
+* fixes thumbnails in media browser
 
 = 1.03 =
 * Supports collapsed mode
