@@ -525,6 +525,52 @@ label{display: inline-block;}
   .btn-mini;
 }
 
+.tagsdiv{
+  .tagchecklist{
+    span{
+      .label;
+      background: #468847;
+      margin-right: 5px;
+      position: relative;
+      padding-left: 15px;
+        a{
+          position: absolute;
+          left: 4px;
+          color: #468847;
+          display: block;
+          background: none;
+          margin: 0;
+          width: 15px;
+          height: 15px;
+          text-indent: 0px;
+            &:before{
+              color: #fff;
+              font-family: 'FontAwesome';
+              content: "\f057";
+              font-weight: normal;
+              font-style: normal;
+              display: inline-block;
+              text-decoration: none;
+            }
+            &:hover{
+              &:before{
+                content: "\f05c";
+              }
+            }
+        }
+    }
+  }
+}
+
+p.the-tagcloud{
+  .well;
+    a{
+      .label;
+      background: #3A87AD;
+      text-decoration: none;
+    }
+}
+
 .plugins .inactive td, .plugins .inactive th, .plugins .active td, .plugins .active th{border-color: #dedede; border-bottom: 0;}
 
 .search-box input[name="s"],
