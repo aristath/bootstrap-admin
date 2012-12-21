@@ -1,5 +1,5 @@
 === Bootstrap Admin ===
-Contributors: aristath
+Contributors: aristath, fovoc
 Donate link: http://aristeides.com/bootstrap-admin
 Tags: administration, administration theme, admin theme, dashboard, bootstrap
 Requires at least: 3.5
@@ -49,8 +49,8 @@ from '0' to '1'.
 
 == Screenshots ==
 
-1. Fresh wordpress installation with the bootstrap admin enabled
-2. The submenu popovers
+1. The Dashboard with the submenu popovers visible
+2. New Post screenshot
 
 
 == Changelog ==
