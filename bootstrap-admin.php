@@ -16,7 +16,7 @@ require_once 'includes/config.php';
 
 function bootstrap_admin_phpless(){
 	require_once( WP_PLUGIN_DIR . '/bootstrap-admin/includes/lessc.inc.php' );
-	lessc::ccompile( WP_PLUGIN_DIR . '/bootstrap-admin/css/global.less', WP_PLUGIN_DIR . '/bootstrap-admin/css/compiled-style.css');
+	lessc::ccompile( WP_PLUGIN_DIR . '/bootstrap-admin/assets/css/global.less', WP_PLUGIN_DIR . '/bootstrap-admin/assets/css/compiled-style.css');
 }
 
 function bootstrap_admin_styles() {
@@ -24,30 +24,30 @@ function bootstrap_admin_styles() {
 	if ($less_mode == 1){
 		bootstrap_admin_phpless();
 	}
-  wp_register_style('customized_bootstrap', plugins_url('css/compiled-style.css', __FILE__), false, '2.1.0');
+  wp_register_style('customized_bootstrap', plugins_url('assets/css/compiled-style.css', __FILE__), false, '2.1.0');
   wp_enqueue_style('customized_bootstrap');
 
 	$chosen_mode = BOOTSTRAP_ADMIN_CHOSEN_JS;
 	if ($chosen_mode == 1){
-		wp_register_style('bootstrap_admin_chosen_css', plugins_url('js/chosen/chosen.css', __FILE__), false, '0.9.8');
+		wp_register_style('bootstrap_admin_chosen_css', plugins_url('assets/js/chosen/chosen.css', __FILE__), false, '0.9.8');
 		wp_enqueue_style('bootstrap_admin_chosen_css');
 	}
 }
 add_action('admin_enqueue_scripts', 'bootstrap_admin_styles');
 
 function bootstrap_admin_scripts(){
-	wp_register_script('bootstrap_main_js', plugins_url('js/bootstrap.min.js', __FILE__), false, null, false);
+	wp_register_script('bootstrap_main_js', plugins_url('assets/js/bootstrap.min.js', __FILE__), false, null, false);
 	wp_enqueue_script('bootstrap_main_js');
 
-	wp_register_script('bootstrap_admin_script', plugins_url('js/script.js', __FILE__), false, null, false);
+	wp_register_script('bootstrap_admin_script', plugins_url('assets/js/script.js', __FILE__), false, null, false);
 	wp_enqueue_script('bootstrap_admin_script');
 
 	$chosen_mode = BOOTSTRAP_ADMIN_CHOSEN_JS;
 	if ($chosen_mode == 1){
-		wp_register_script('bootstrap_admin_chosen_js', plugins_url('js/chosen/chosen.jquery.min.js', __FILE__), false, '0.9.8');
+		wp_register_script('bootstrap_admin_chosen_js', plugins_url('assets/js/chosen/chosen.jquery.min.js', __FILE__), false, '0.9.8');
 		wp_enqueue_script('bootstrap_admin_chosen_js');
 
-		wp_register_script('bootstrap_admin_chosen_trigger', plugins_url('js/chosen-trigger.js', __FILE__), false, '0.9.8');
+		wp_register_script('bootstrap_admin_chosen_trigger', plugins_url('assets/js/chosen-trigger.js', __FILE__), false, '0.9.8');
 		wp_enqueue_script('bootstrap_admin_chosen_trigger');
 	}
 }
@@ -100,7 +100,7 @@ function bootstrap_admin_wp_default_styles( &$styles ) {
   $styles->add( 'customize-controls', "/wp-admin/css/customize-controls$suffix.css", array( 'wp-admin', 'colors', 'ie' ) );
   $styles->add( 'media-views', "/wp-includes/css/media-views$suffix.css", array( 'buttons' ) );
   // $styles->add( 'buttons', "/wp-includes/css/buttons$suffix.css" );
-  $styles->add( 'buttons', plugins_url( 'css/buttons.css', __FILE__ ) );
+  $styles->add( 'buttons', plugins_url( 'assets/css/buttons.css', __FILE__ ) );
 
   foreach ( $rtl_styles as $rtl_style ) {
     $styles->add_data( $rtl_style, 'rtl', true );
