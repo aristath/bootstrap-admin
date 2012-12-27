@@ -57,7 +57,7 @@ from '0' to '1'.
 
 = 1.06 =
 * Replacing [Font-Awesome](http://fortawesome.github.com/Font-Awesome/) with [Elusive-Icons](http://aristath.github.com/elusive-iconfont/)
-* Added menu icon for easy-digital-downloads
+* Added menu icon for [easy-digital-downloads](http://wordpress.org/extend/plugins/easy-digital-downloads/)
 * Fixed conflict with the [WPMU DEV Dashboard](http://premium.wpmudev.org/project/wpmu-dev-dashboard/) plugin
 
 = 1.05 =
