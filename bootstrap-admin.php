@@ -42,6 +42,12 @@ function bootstrap_admin_scripts(){
 	wp_register_script('bootstrap_admin_script', plugins_url('assets/js/script.js', __FILE__), false, null, false);
 	wp_enqueue_script('bootstrap_admin_script');
 
+  // use custom icon32 icons when "WPMU DEV Dashboard" plugin is NOT installed
+  if ( !class_exists( 'WPMUDEV_Update_Notifications' ) ) {
+    wp_register_script('bootstrap_admin_icon32', plugins_url('assets/js/icon32.js', __FILE__), false, null, false);
+    wp_enqueue_script('bootstrap_admin_icon32');
+  }
+
 	$chosen_mode = BOOTSTRAP_ADMIN_CHOSEN_JS;
 	if ($chosen_mode == 1){
 		wp_register_script('bootstrap_admin_chosen_js', plugins_url('assets/js/chosen/chosen.jquery.min.js', __FILE__), false, '0.9.8');
