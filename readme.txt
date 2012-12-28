@@ -4,7 +4,7 @@ Donate link: http://aristeides.com/bootstrap-admin
 Tags: administration, administration theme, admin theme, dashboard, bootstrap
 Requires at least: 3.5
 Tested up to: 3.5
-Stable tag: 1.06
+Stable tag: 1.11
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,8 +55,11 @@ from '0' to '1'.
 
 == Changelog ==
 
-= 1.06 =
-* Replacing [Font-Awesome](http://fortawesome.github.com/Font-Awesome/) with [Elusive-Icons](http://aristath.github.com/elusive-iconfont/)
+= 1.11 =
+* Fixes the remove tags symbol on the posts editing page
+
+= 1.10 =
+* Replacing [Font-Awesome](http://fortawesome.github.com/Font-Awesome/) with [Elusive-Icons](http://aristath.github.com/elusive-iconfont/) due to [licencing issues](http://make.wordpress.org/plugins/2012/12/20/gpl-and-the-repository/)
 * Added menu icon for [easy-digital-downloads](http://wordpress.org/extend/plugins/easy-digital-downloads/)
 * Fixed conflict with the [WPMU DEV Dashboard](http://premium.wpmudev.org/project/wpmu-dev-dashboard/) plugin
 
