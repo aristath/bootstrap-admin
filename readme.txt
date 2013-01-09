@@ -4,7 +4,7 @@ Donate link: http://aristeides.com/bootstrap-admin
 Tags: administration, administration theme, admin theme, dashboard, bootstrap
 Requires at least: 3.5
 Tested up to: 3.5
-Stable tag: 1.11
+Stable tag: 1.12
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,10 @@ from '0' to '1'.
 
 
 == Changelog ==
+
+= 1.12 =
+* Updated the [Elusive-Icons](http://aristath.github.com/elusive-iconfont/) webfont
+* Bugfixes
 
 = 1.11 =
 * Fixes the remove tags symbol on the posts editing page
