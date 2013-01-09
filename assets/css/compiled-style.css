@@ -7185,6 +7185,9 @@ a.wp-menu-open .wp-menu-image:before,
 #menu-posts-download div.wp-menu-name {
   padding-left: 30px !important;
 }
+.folded h3.popover-title {
+  height: 20px;
+}
 .menu-icon-dashboard .wp-menu-image:before {
   content: "\e09e";
 }
