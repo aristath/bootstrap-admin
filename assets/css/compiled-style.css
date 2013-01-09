@@ -6320,6 +6320,7 @@ li.wp-menu-separator {
 }
 #adminmenuback,
 #adminmenuwrap {
+  top: 30px;
   background: none;
   background-color: none;
   border: 0;
@@ -6345,7 +6346,7 @@ li.wp-menu-separator {
 #adminmenu li.wp-has-submenu.wp-menu-open .wp-submenu {
   border-right: 1px solid #e5e5e5;
   border-left: 1px solid #e5e5e5;
-  margin: 0 0 -1px;
+  margin: 0 -2px -1px;
 }
 #adminmenu li.menu-top a.menu-top {
   font-size: 14px;
