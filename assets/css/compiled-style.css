@@ -6794,14 +6794,14 @@ label {
 .tagsdiv .tagchecklist span a:before {
   color: #fff;
   font-family: 'Elusive-Icons';
-  content: "\e04b";
+  content: "\e04e";
   font-weight: normal;
   font-style: normal;
   display: inline-block;
   text-decoration: none;
 }
 .tagsdiv .tagchecklist span a:hover:before {
-  content: "\e04d";
+  content: "\e04c";
 }
 p.the-tagcloud {
   min-height: 20px;
