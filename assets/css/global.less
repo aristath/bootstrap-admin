@@ -616,26 +616,27 @@ a.wp-menu-open .wp-menu-image:before, .current .wp-menu-image:before {color: #ff
 .menu-icon-tools,
 .menu-icon-settings,
 .menu-icon-product,
-.toplevel_page_wpmudev,
-.toplevel_page_incsub_support,
+.menu-top.toplevel_page_wpmudev,
+.menu-top.toplevel_page_incsub_support,
 .menu-icon-site,
-.toplevel_page_psts-checkout,
-.toplevel_page_cp_main,
-.toplevel_page_mp_st,
-.toplevel_page_customize,
-.toplevel_page_tools,
-.toplevel_page_logout,
-.toplevel_page_business_tools,
-.toplevel_page_jetpack,
+.menu-top.toplevel_page_psts-checkout,
+.menu-top.toplevel_page_cp_main,
+.menu-top.toplevel_page_mp_st,
+.menu-top.toplevel_page_customize,
+.menu-top.toplevel_page_tools,
+.menu-top.toplevel_page_logout,
+.menu-top.toplevel_page_business_tools,
+.menu-top.toplevel_page_jetpack,
 .menu-icon-feedback,
-.toplevel_page_wpcf7,
-.toplevel_page_newsletter,
-.toplevel_page_nrelate-main,
-.toplevel_page_wdfb,
+.menu-top.toplevel_page_wpcf7,
+.menu-top.toplevel_page_newsletter,
+.menu-top.toplevel_page_nrelate-main,
+.menu-top.toplevel_page_wdfb,
 .menu-icon-forum,
 .menu-icon-topic,
 .menu-icon-reply,
-#menu-posts-download {
+#menu-posts-download,
+.menu-top.toplevel_page_sam-list {
   .wp-menu-image {
     background-image: none !important;
     position: absolute;
@@ -653,6 +654,11 @@ a.wp-menu-open .wp-menu-image:before, .current .wp-menu-image:before {color: #ff
   div.wp-menu-name {
     padding-left: 30px !important;
   }
+}
+
+#adminmenuwrap #adminmenu .menu-icon-feedback div.wp-menu-image {
+  background: none !important;
+  background-image: none !important;
 }
 
 .folded h3.popover-title{
@@ -691,3 +697,4 @@ a.wp-menu-open .wp-menu-image:before, .current .wp-menu-image:before {color: #ff
 .menu-icon-topic .wp-menu-image:before                        { content: "\e0a3"; }
 .menu-icon-reply .wp-menu-image:before                        { content: "\e03b"; }
 #menu-posts-download .wp-menu-image:before                    { content: "\e0c9"; }
+.menu-top.toplevel_page_sam-list .wp-menu-image:before        { content: "\e0fb"; }
