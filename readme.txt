@@ -13,7 +13,7 @@ A clean, minimalistic administration theme based on Twitter's Bootstrap
 == Description ==
 
 A clean, minimalistic administration theme implementing Twitter's Bootstrap.
-Project was built by http://shoestrap.org
+Project was built by [shoestrap.org](http://shoestrap.org) and uses our very own [Elusive-Icons](http://aristath.github.com/elusive-iconfont/) webfont.
 
 You can contribute by helping out in github: https://github.com/aristath/bootstrap-admin
 
