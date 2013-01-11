@@ -132,9 +132,20 @@ add_action( 'wp_default_styles', 'bootstrap_admin_wp_default_styles' ); // adds 
 add_action( 'admin_init', 'bootstrap_admin_register_option', 11 );
 function bootstrap_admin_register_option() {
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_wp_menu_navbar' );
+
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_change_footer_check' );
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_change_footer_text' );
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_hide_footer_upgrade' );
+
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_browser_nag' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_right_now' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_recent_comments' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_incoming_links' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_plugins' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_quick_press' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_recent_drafts' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_primary' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_secondary' );
 }
 
 /*
@@ -150,9 +161,19 @@ function bootstrap_admin_admin_page() {
  * The content of the administration page for Bootstrap Admin.
  */
 function bootstrap_admin_admin_page_content() { 
-  $bootstrap_admin_remove_wp_menu_navbar  = get_option( 'bootstrap_admin_remove_wp_menu_navbar' );
-  $bootstrap_admin_change_footer_check    = get_option( 'bootstrap_admin_change_footer_check' );
-  $bootstrap_admin_change_footer_text     = get_option( 'bootstrap_admin_change_footer_text' );
+  $bootstrap_admin_remove_wp_menu_navbar            = get_option( 'bootstrap_admin_remove_wp_menu_navbar' );
+  $bootstrap_admin_change_footer_check              = get_option( 'bootstrap_admin_change_footer_check' );
+  $bootstrap_admin_change_footer_text               = get_option( 'bootstrap_admin_change_footer_text' );
+  $bootstrap_admin_hide_footer_upgrade              = get_option( 'bootstrap_admin_hide_footer_upgrade' );
+  $bootstrap_admin_remove_dashboard_browser_nag     = get_option( 'bootstrap_admin_remove_dashboard_browser_nag' );
+  $bootstrap_admin_remove_dashboard_right_now       = get_option( 'bootstrap_admin_remove_dashboard_right_now' );
+  $bootstrap_admin_remove_dashboard_recent_comments = get_option( 'bootstrap_admin_remove_dashboard_recent_comments' );
+  $bootstrap_admin_remove_dashboard_incoming_links  = get_option( 'bootstrap_admin_remove_dashboard_incoming_links' );
+  $bootstrap_admin_remove_dashboard_plugins         = get_option( 'bootstrap_admin_remove_dashboard_plugins' );
+  $bootstrap_admin_remove_dashboard_quick_press     = get_option( 'bootstrap_admin_remove_dashboard_quick_press' );
+  $bootstrap_admin_remove_dashboard_recent_drafts   = get_option( 'bootstrap_admin_remove_dashboard_recent_drafts' );
+  $bootstrap_admin_remove_dashboard_primary         = get_option( 'bootstrap_admin_remove_dashboard_primary' );
+  $bootstrap_admin_remove_dashboard_secondary       = get_option( 'bootstrap_admin_remove_dashboard_secondary' );
   ?>
   <div class="wrap">
     <h2><?php _e( 'Bootstrap Admin Configuration', 'bootstrap_admin' ); ?></h2>
@@ -202,6 +223,53 @@ function bootstrap_admin_admin_page_content() {
           
           <hr />
 
+          <h4><?php _e( 'Remove Dashboard Widgets', 'bootstrap_admin' ); ?></h4>
+
+          <input id="bootstrap_admin_remove_dashboard_browser_nag" name="bootstrap_admin_remove_dashboard_browser_nag" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_dashboard_browser_nag')); ?> />
+          <label class="description" for="bootstrap_admin_remove_dashboard_browser_nag">
+            <?php _e( 'Remove "Browser Nag" Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_dashboard_right_now" name="bootstrap_admin_remove_dashboard_right_now" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_dashboard_right_now')); ?> />
+          <label class="description" for="bootstrap_admin_remove_dashboard_right_now">
+            <?php _e( 'Remove "Right Now" Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_dashboard_recent_comments" name="bootstrap_admin_remove_dashboard_recent_comments" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_dashboard_recent_comments')); ?> />
+          <label class="description" for="bootstrap_admin_remove_dashboard_recent_comments">
+            <?php _e( 'Remove "Recent Comments" Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_dashboard_incoming_links" name="bootstrap_admin_remove_dashboard_incoming_links" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_dashboard_incoming_links')); ?> />
+          <label class="description" for="bootstrap_admin_remove_dashboard_incoming_links">
+            <?php _e( 'Remove "Incoming Links" Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_dashboard_plugins" name="bootstrap_admin_remove_dashboard_plugins" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_dashboard_plugins')); ?> />
+          <label class="description" for="bootstrap_admin_remove_dashboard_plugins">
+            <?php _e( 'Remove "Plugins" Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_dashboard_quick_press" name="bootstrap_admin_remove_dashboard_quick_press" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_dashboard_quick_press')); ?> />
+          <label class="description" for="bootstrap_admin_remove_dashboard_quick_press">
+            <?php _e( 'Remove "Quick Press" Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_dashboard_recent_drafts" name="bootstrap_admin_remove_dashboard_recent_drafts" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_dashboard_recent_drafts')); ?> />
+          <label class="description" for="bootstrap_admin_remove_dashboard_recent_drafts">
+            <?php _e( 'Remove "Recent Drafts" Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_dashboard_primary" name="bootstrap_admin_remove_dashboard_primary" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_dashboard_primary')); ?> />
+          <label class="description" for="bootstrap_admin_remove_dashboard_primary">
+            <?php _e( 'Remove "Primary" Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_dashboard_secondary" name="bootstrap_admin_remove_dashboard_secondary" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_dashboard_secondary')); ?> />
+          <label class="description" for="bootstrap_admin_remove_dashboard_secondary">
+            <?php _e( 'Remove "Secondary" Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
           <?php submit_button(); ?>
 
         </form>
@@ -246,3 +314,47 @@ function bootstrap_admin_hide_footer_upgrade() {
 if ( get_option( 'bootstrap_admin_hide_footer_upgrade' ) == 1 ) {
   add_filter('update_footer', 'bootstrap_admin_hide_footer_upgrade', 100);
 }
+
+/*
+ * Removes Dashboard Widgets
+ */
+function bootstrap_admin_remove_dashboard_widgets() {
+  $bootstrap_admin_remove_dashboard_browser_nag     = get_option( 'bootstrap_admin_remove_dashboard_browser_nag' );
+  $bootstrap_admin_remove_dashboard_right_now       = get_option( 'bootstrap_admin_remove_dashboard_right_now' );
+  $bootstrap_admin_remove_dashboard_recent_comments = get_option( 'bootstrap_admin_remove_dashboard_recent_comments' );
+  $bootstrap_admin_remove_dashboard_incoming_links  = get_option( 'bootstrap_admin_remove_dashboard_incoming_links' );
+  $bootstrap_admin_remove_dashboard_plugins         = get_option( 'bootstrap_admin_remove_dashboard_plugins' );
+  $bootstrap_admin_remove_dashboard_quick_press     = get_option( 'bootstrap_admin_remove_dashboard_quick_press' );
+  $bootstrap_admin_remove_dashboard_recent_drafts   = get_option( 'bootstrap_admin_remove_dashboard_recent_drafts' );
+  $bootstrap_admin_remove_dashboard_primary         = get_option( 'bootstrap_admin_remove_dashboard_primary' );
+  $bootstrap_admin_remove_dashboard_secondary       = get_option( 'bootstrap_admin_remove_dashboard_secondary' );
+  
+  if ( $bootstrap_admin_remove_dashboard_browser_nag == 1 ) {
+    remove_meta_box( 'dashboard_browser_nag', 'dashboard', 'normal' );
+  }
+  if ( $bootstrap_admin_remove_dashboard_right_now == 1 ) {
+    remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+  }
+  if ( $bootstrap_admin_remove_dashboard_recent_comments == 1 ) {
+    remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+  }
+  if ( $bootstrap_admin_remove_dashboard_incoming_links == 1 ) {
+    remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+  }
+  if ( $bootstrap_admin_remove_dashboard_plugins == 1 ) {
+    remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
+  }
+  if ( $bootstrap_admin_remove_dashboard_quick_press == 1 ) {
+    remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+  }
+  if ( $bootstrap_admin_remove_dashboard_recent_drafts == 1 ) {
+    remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
+  }
+  if ( $bootstrap_admin_remove_dashboard_primary == 1 ) {
+    remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+  }
+  if ( $bootstrap_admin_remove_dashboard_secondary == 1 ) {
+    remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
+  }
+}
+add_action( 'wp_dashboard_setup', 'bootstrap_admin_remove_dashboard_widgets' );
