@@ -4,7 +4,7 @@ Donate link: http://aristeides.com/bootstrap-admin
 Tags: administration, administration theme, admin theme, dashboard, bootstrap
 Requires at least: 3.5
 Tested up to: 3.5
-Stable tag: 1.12
+Stable tag: 1.13
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,11 +18,7 @@ Project was built by http://shoestrap.org
 You can contribute by helping out in github: https://github.com/aristath/bootstrap-admin
 
 This plugin will completely re-style your WordPress admin area, offering a cleaner experience.
-We 've included theming for most of the things that we could think of.
-If however you find something missing, don't hesitate to tell us about it @ http://bootstrap-commerce.com/forums/forum/bootstrap-admin/
-We welcome all suggestions!
-
-We 've included icons for all core menus as well as a few extras, but if you find yourself wanting more, you can make a suggestion at the link mentioned above.
+Coming soon: Complete rebranding for your WordPress Administration!
 
 If you like this plugin and use it on your projects, please consider donating @ http://aristeides.com 
 
@@ -54,6 +50,13 @@ from '0' to '1'.
 
 
 == Changelog ==
+
+= 1.13 =
+* Fixed issue with Jetpack's "Feedback" icon
+* Added icon for Yoast SEO
+* Added icon for Advanced Custom Fields
+* Added icon for WordFence
+* Fixing labels issue on Advanced Custom Fields
 
 = 1.12 =
 * Updated the [Elusive-Icons](http://aristath.github.com/elusive-iconfont/) webfont
