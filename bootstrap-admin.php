@@ -9,17 +9,21 @@ Version: 1.13
 Author URI: http://aristeides.com
 */
 
-// Go to includes/config.php to switch modes.
-// Less mode is mainly for development purposes.
+require_once 'includes/config.php'; // Includes some advanced configuration options such as enabling less to css compiling.
 
-require_once 'includes/config.php';
-require_once 'includes/admin.php';
-
+/*
+ * This funcion takes care of less to css compiling
+ */
 function bootstrap_admin_phpless(){
 	require_once( WP_PLUGIN_DIR . '/bootstrap-admin/includes/lessc.inc.php' );
 	lessc::ccompile( WP_PLUGIN_DIR . '/bootstrap-admin/assets/css/global.less', WP_PLUGIN_DIR . '/bootstrap-admin/assets/css/compiled-style.css');
 }
 
+/*
+ * Enqueue stylesheets.
+ * If less to css compiling is enabled in the config.php file
+ * then enable the compiler.
+ */
 function bootstrap_admin_styles() {
 	$less_mode = BOOTSTRAP_ADMIN_LESS_MODE;
 	if ($less_mode == 1){
@@ -27,7 +31,8 @@ function bootstrap_admin_styles() {
 	}
   wp_register_style('customized_bootstrap', plugins_url('assets/css/compiled-style.css', __FILE__), false, '2.1.0');
   wp_enqueue_style('customized_bootstrap');
-
+  
+  // If chosen.js is enabled in the config.php file, then enqueue some extra styles.
 	$chosen_mode = BOOTSTRAP_ADMIN_CHOSEN_JS;
 	if ($chosen_mode == 1){
 		wp_register_style('bootstrap_admin_chosen_css', plugins_url('assets/js/chosen/chosen.css', __FILE__), false, '0.9.8');
@@ -36,6 +41,9 @@ function bootstrap_admin_styles() {
 }
 add_action('admin_enqueue_scripts', 'bootstrap_admin_styles');
 
+/*
+ * Enqueue the necessary scripts.
+ */
 function bootstrap_admin_scripts(){
 	wp_register_script('bootstrap_main_js', plugins_url('assets/js/bootstrap.min.js', __FILE__), false, null, false);
 	wp_enqueue_script('bootstrap_main_js');
@@ -49,12 +57,12 @@ function bootstrap_admin_scripts(){
     wp_enqueue_script('bootstrap_admin_icon32');
   }
 
+  // If chosen.js is enabled in the config.php file, then enqueue some extra styles.
 	$chosen_mode = BOOTSTRAP_ADMIN_CHOSEN_JS;
 	if ($chosen_mode == 1){
 		wp_register_script('bootstrap_admin_chosen_js', plugins_url('assets/js/chosen/chosen.jquery.min.js', __FILE__), false, '0.9.8');
+    wp_register_script('bootstrap_admin_chosen_trigger', plugins_url('assets/js/chosen-trigger.js', __FILE__), false, '0.9.8');
 		wp_enqueue_script('bootstrap_admin_chosen_js');
-
-		wp_register_script('bootstrap_admin_chosen_trigger', plugins_url('assets/js/chosen-trigger.js', __FILE__), false, '0.9.8');
 		wp_enqueue_script('bootstrap_admin_chosen_trigger');
 	}
 }
@@ -117,3 +125,33 @@ function bootstrap_admin_wp_default_styles( &$styles ) {
 }
 remove_action( 'wp_default_styles', 'wp_default_styles' );              // removes the default wp_default_styles function
 add_action( 'wp_default_styles', 'bootstrap_admin_wp_default_styles' ); // adds our customized bootstrap_admin_wp_default_styles function
+
+/*
+ * Creates our settings in the options table in the database
+ */
+add_action( 'admin_init', 'shoestrap_dev_mode_register_options', 11 );
+function shoestrap_dev_mode_register_options() {
+  register_setting( 'shoestrap_advanced', 'shoestrap_dev_mode' );
+}
+
+/*
+ * Adds the Administration page for Bootstrap Admin.
+ * This page will hold any option for the bootstrap Admin plugin.
+ */
+add_action( 'admin_menu', 'bootstrap_admin_admin_page' );
+function bootstrap_admin_admin_page() {
+  add_submenu_page('options-general.php', 'bootstrap-admin', 'Bootstrap Admin', 'manage_options', 'bootstrap-admin-menu', 'bootstrap_admin_admin_page_content');
+}
+
+/*
+ * The content of the administration page for Bootstrap Admin.
+ * We add an action here called 'bootstrap_admin_admin_content'
+ * that we'll hook onto later.
+ */
+function bootstrap_admin_admin_page_content() { ?>
+  <div class="wrap">
+    <h2><?php _e( 'Bootstrap Admin Configuration', 'bootstrap_admin' ); ?></h2>
+    <?php do_action( 'bootstrap_admin_admin_content' ); ?>
+  </div>
+  <?php
+}
