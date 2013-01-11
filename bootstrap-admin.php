@@ -147,6 +147,14 @@ function bootstrap_admin_register_option() {
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_recent_drafts' );
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_primary' );
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_secondary' );
+
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_media' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_comments' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_themes' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_plugins' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_users' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_tools' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_settings' );
 }
 
 /*
@@ -176,6 +184,13 @@ function bootstrap_admin_admin_page_content() {
   $bootstrap_admin_remove_dashboard_recent_drafts   = get_option( 'bootstrap_admin_remove_dashboard_recent_drafts' );
   $bootstrap_admin_remove_dashboard_primary         = get_option( 'bootstrap_admin_remove_dashboard_primary' );
   $bootstrap_admin_remove_dashboard_secondary       = get_option( 'bootstrap_admin_remove_dashboard_secondary' );
+  $bootstrap_admin_remove_menu_media                = get_option( 'bootstrap_admin_remove_menu_media' );
+  $bootstrap_admin_remove_menu_comments             = get_option( 'bootstrap_admin_remove_menu_comments' );
+  $bootstrap_admin_remove_menu_themes               = get_option( 'bootstrap_admin_remove_menu_themes' );
+  $bootstrap_admin_remove_menu_plugins              = get_option( 'bootstrap_admin_remove_menu_plugins' );
+  $bootstrap_admin_remove_menu_users                = get_option( 'bootstrap_admin_remove_menu_users' );
+  $bootstrap_admin_remove_menu_tools                = get_option( 'bootstrap_admin_remove_menu_tools' );
+  $bootstrap_admin_remove_menu_settings             = get_option( 'bootstrap_admin_remove_menu_settings' );
   ?>
   <div class="wrap">
     <h2><?php _e( 'Bootstrap Admin Configuration', 'bootstrap_admin' ); ?></h2>
@@ -277,6 +292,45 @@ function bootstrap_admin_admin_page_content() {
             <?php _e( 'Remove "Secondary" Widget', 'bootstrap_admin' ); ?>
           </label>
           <br />
+
+          <h4><?php _e( 'Remove Default Menu Items', 'bootstrap_admin' ); ?></h4>
+
+          <input id="bootstrap_admin_remove_menu_media" name="bootstrap_admin_remove_menu_media" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_menu_media')); ?> />
+          <label class="description" for="bootstrap_admin_remove_menu_media">
+            <?php _e( 'Media', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_menu_comments" name="bootstrap_admin_remove_menu_comments" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_menu_comments')); ?> />
+          <label class="description" for="bootstrap_admin_remove_menu_comments">
+            <?php _e( 'Comments', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_menu_themes" name="bootstrap_admin_remove_menu_themes" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_menu_themes')); ?> />
+          <label class="description" for="bootstrap_admin_remove_menu_themes">
+            <?php _e( 'Appearance', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_menu_plugins" name="bootstrap_admin_remove_menu_plugins" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_menu_plugins')); ?> />
+          <label class="description" for="bootstrap_admin_remove_menu_plugins">
+            <?php _e( 'Plugins', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_menu_users" name="bootstrap_admin_remove_menu_users" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_menu_users')); ?> />
+          <label class="description" for="bootstrap_admin_remove_menu_users">
+            <?php _e( 'Users', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_menu_tools" name="bootstrap_admin_remove_menu_tools" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_menu_tools')); ?> />
+          <label class="description" for="bootstrap_admin_remove_menu_tools">
+            <?php _e( 'Tools', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_remove_menu_settings" name="bootstrap_admin_remove_menu_settings" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_menu_settings')); ?> />
+          <label class="description" for="bootstrap_admin_remove_menu_settings">
+            <?php _e( 'Settings', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+
           <?php submit_button(); ?>
 
         </form>
@@ -369,3 +423,40 @@ function bootstrap_admin_remove_dashboard_widgets() {
   }
 }
 add_action( 'wp_dashboard_setup', 'bootstrap_admin_remove_dashboard_widgets' );
+
+/*
+ * Removes Default WordPress menus
+ */
+function bootstrap_admin_remove_default_menus() {
+  global $menu;
+  $bootstrap_admin_remove_menu_media                = get_option( 'bootstrap_admin_remove_menu_media' );
+  $bootstrap_admin_remove_menu_comments             = get_option( 'bootstrap_admin_remove_menu_comments' );
+  $bootstrap_admin_remove_menu_themes               = get_option( 'bootstrap_admin_remove_menu_themes' );
+  $bootstrap_admin_remove_menu_plugins              = get_option( 'bootstrap_admin_remove_menu_plugins' );
+  $bootstrap_admin_remove_menu_users                = get_option( 'bootstrap_admin_remove_menu_users' );
+  $bootstrap_admin_remove_menu_tools                = get_option( 'bootstrap_admin_remove_menu_tools' );
+  $bootstrap_admin_remove_menu_settings             = get_option( 'bootstrap_admin_remove_menu_settings' );
+  
+  if ( $bootstrap_admin_remove_menu_media == 1 ) {
+    remove_menu_page( 'upload.php' );
+  }
+  if ( $bootstrap_admin_remove_menu_comments == 1 ) {
+    remove_menu_page( 'edit-comments.php' );
+  }
+  if ( $bootstrap_admin_remove_menu_themes == 1 ) {
+    remove_menu_page( 'themes.php' );
+  }
+  if ( $bootstrap_admin_remove_menu_plugins == 1 ) {
+    remove_menu_page( 'plugins.php' );
+  }
+  if ( $bootstrap_admin_remove_menu_users == 1 ) {
+    remove_menu_page( 'users.php' );
+  }
+  if ( $bootstrap_admin_remove_menu_tools == 1 ) {
+    remove_menu_page( 'tools.php' );
+  }
+  if ( $bootstrap_admin_remove_menu_settings == 1 ) {
+    remove_menu_page( 'options-general.php' );
+  }
+}
+add_action('admin_menu', 'bootstrap_admin_remove_default_menus');
