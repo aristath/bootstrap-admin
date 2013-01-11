@@ -129,9 +129,9 @@ add_action( 'wp_default_styles', 'bootstrap_admin_wp_default_styles' ); // adds 
 /*
  * Creates our settings in the options table in the database
  */
-add_action( 'admin_init', 'shoestrap_dev_mode_register_options', 11 );
-function shoestrap_dev_mode_register_options() {
-  register_setting( 'shoestrap_advanced', 'shoestrap_dev_mode' );
+add_action( 'admin_init', 'bootstrap_admin_register_option', 11 );
+function bootstrap_admin_register_option() {
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_wp_menu_navbar' );
 }
 
 /*
@@ -140,18 +140,46 @@ function shoestrap_dev_mode_register_options() {
  */
 add_action( 'admin_menu', 'bootstrap_admin_admin_page' );
 function bootstrap_admin_admin_page() {
-  add_submenu_page('options-general.php', 'bootstrap-admin', 'Bootstrap Admin', 'manage_options', 'bootstrap-admin-menu', 'bootstrap_admin_admin_page_content');
+  add_submenu_page('options-general.php', 'bootstrap_admin', 'Bootstrap Admin', 'manage_options', 'bootstrap_admin_menu', 'bootstrap_admin_admin_page_content');
 }
 
 /*
  * The content of the administration page for Bootstrap Admin.
- * We add an action here called 'bootstrap_admin_admin_content'
- * that we'll hook onto later.
  */
-function bootstrap_admin_admin_page_content() { ?>
+function bootstrap_admin_admin_page_content() { 
+  $bootstrap_admin_remove_wp_menu_navbar = get_option( 'bootstrap_admin_remove_wp_menu_navbar' );
+  ?>
   <div class="wrap">
     <h2><?php _e( 'Bootstrap Admin Configuration', 'bootstrap_admin' ); ?></h2>
-    <?php do_action( 'bootstrap_admin_admin_content' ); ?>
+    <div class="postbox">
+      <h3 class="hndle" style="padding: 7px 10px;"><span><?php _e( 'Admin Bar', 'bootstrap_admin' ); ?></span></h3>
+      <div class="inside">
+
+        <form method="post" action="options.php">
+          <?php settings_fields( 'bootstrap_admin_options' ); ?>
+
+          <h4><?php _e( 'Hide WordPress menu from the Admin Bar', 'bootstrap_admin' ); ?></h4>
+          <input id="bootstrap_admin_remove_wp_menu_navbar" name="bootstrap_admin_remove_wp_menu_navbar" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_wp_menu_navbar')); ?> />
+          <label class="description" for="bootstrap_admin_remove_wp_menu_navbar">
+            <?php _e( 'Hide', 'shoestrap' ); ?>
+          </label>
+
+          <hr />
+
+          <?php submit_button(); ?>
+
+        </form>
+      </div>
+    </div>
   </div>
   <?php
+}
+
+add_action( 'admin_bar_menu', 'bootstrap_admin_remove_wp_menu_navbar', 999 );
+function bootstrap_admin_remove_wp_menu_navbar( $wp_admin_bar ) {
+  $bootstrap_admin_remove_wp_menu_navbar = get_option( 'bootstrap_admin_remove_wp_menu_navbar' );
+
+  if ( $bootstrap_admin_remove_wp_menu_navbar == 1 ) {
+    $wp_admin_bar->remove_node('wp-logo');
+  }
 }
