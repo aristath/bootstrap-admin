@@ -132,6 +132,9 @@ add_action( 'wp_default_styles', 'bootstrap_admin_wp_default_styles' ); // adds 
 add_action( 'admin_init', 'bootstrap_admin_register_option', 11 );
 function bootstrap_admin_register_option() {
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_wp_menu_navbar' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_change_footer_check' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_change_footer_text' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_hide_footer_upgrade' );
 }
 
 /*
@@ -147,7 +150,9 @@ function bootstrap_admin_admin_page() {
  * The content of the administration page for Bootstrap Admin.
  */
 function bootstrap_admin_admin_page_content() { 
-  $bootstrap_admin_remove_wp_menu_navbar = get_option( 'bootstrap_admin_remove_wp_menu_navbar' );
+  $bootstrap_admin_remove_wp_menu_navbar  = get_option( 'bootstrap_admin_remove_wp_menu_navbar' );
+  $bootstrap_admin_change_footer_check    = get_option( 'bootstrap_admin_change_footer_check' );
+  $bootstrap_admin_change_footer_text     = get_option( 'bootstrap_admin_change_footer_text' );
   ?>
   <div class="wrap">
     <h2><?php _e( 'Bootstrap Admin Configuration', 'bootstrap_admin' ); ?></h2>
@@ -158,12 +163,43 @@ function bootstrap_admin_admin_page_content() {
         <form method="post" action="options.php">
           <?php settings_fields( 'bootstrap_admin_options' ); ?>
 
-          <h4><?php _e( 'Hide WordPress menu from the Admin Bar', 'bootstrap_admin' ); ?></h4>
+          <h4><?php _e( 'Admin Bar Settings', 'bootstrap_admin' ); ?></h4>
+
           <input id="bootstrap_admin_remove_wp_menu_navbar" name="bootstrap_admin_remove_wp_menu_navbar" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_wp_menu_navbar')); ?> />
           <label class="description" for="bootstrap_admin_remove_wp_menu_navbar">
-            <?php _e( 'Hide', 'shoestrap' ); ?>
+            <?php _e( 'Hide WordPress menu from the Admin Bar', 'bootstrap_admin' ); ?>
           </label>
 
+          <hr />
+
+          <h4><?php _e( 'Footer Settings', 'bootstrap_admin' ); ?></h4>
+
+          <input id="bootstrap_admin_change_footer_check" name="bootstrap_admin_change_footer_check" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_change_footer_check')); ?> />
+          <label class="description" for="bootstrap_admin_change_footer_check">
+            <?php _e( 'Change Footer Text', 'bootstrap_admin' ); ?>
+          </label>
+          
+          <?php
+          if ( $bootstrap_admin_change_footer_check != 1 ) {
+            $bootstrap_admin_change_footer_check_disabled = 'disabled';
+            echo '<div style="opacity: 0.7">';
+          } else {
+            $bootstrap_admin_change_footer_check_disabled = '';
+            echo '<div>';
+          } ?>
+
+            <input type="text" name="bootstrap_admin_change_footer_text" size="45" <?php echo $bootstrap_admin_change_footer_check_disabled ?> value="<?php echo get_option('bootstrap_admin_change_footer_text'); ?>" />  
+            <label class="description" for="bootstrap_admin_change_footer_text">
+              <?php _e( 'New Footer text', 'bootstrap_admin' ); ?>
+            </label>
+          
+          </div>
+
+          <input id="bootstrap_admin_hide_footer_upgrade" name="bootstrap_admin_hide_footer_upgrade" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_hide_footer_upgrade')); ?> />
+          <label class="description" for="bootstrap_admin_hide_footer_upgrade">
+            <?php _e( 'Hide WordPress Version on the Footer', 'bootstrap_admin' ); ?>
+          </label>
+          
           <hr />
 
           <?php submit_button(); ?>
@@ -175,6 +211,9 @@ function bootstrap_admin_admin_page_content() {
   <?php
 }
 
+/*
+ * Takes care of hiding the wordpress logo in the admin bar.
+ */
 add_action( 'admin_bar_menu', 'bootstrap_admin_remove_wp_menu_navbar', 999 );
 function bootstrap_admin_remove_wp_menu_navbar( $wp_admin_bar ) {
   $bootstrap_admin_remove_wp_menu_navbar = get_option( 'bootstrap_admin_remove_wp_menu_navbar' );
@@ -182,4 +221,28 @@ function bootstrap_admin_remove_wp_menu_navbar( $wp_admin_bar ) {
   if ( $bootstrap_admin_remove_wp_menu_navbar == 1 ) {
     $wp_admin_bar->remove_node('wp-logo');
   }
+}
+
+/*
+ * Changes Footer text according to our previous selection.
+ */
+function bootstrap_admin_change_footer_text () {
+  $bootstrap_admin_change_footer_text = get_option( 'bootstrap_admin_change_footer_text' );
+  
+  echo $bootstrap_admin_change_footer_text;
+}
+// Only change the footer text if user selected to do so.
+if ( get_option( 'bootstrap_admin_change_footer_check' ) == 1 ) {
+  add_filter('admin_footer_text', 'bootstrap_admin_change_footer_text');
+}
+
+/*
+ * Hide WordPress version on the Footer.
+ */
+function bootstrap_admin_hide_footer_upgrade() {
+  echo '';
+}
+// Only change the footer text if user selected to do so.
+if ( get_option( 'bootstrap_admin_hide_footer_upgrade' ) == 1 ) {
+  add_filter('update_footer', 'bootstrap_admin_hide_footer_upgrade', 100);
 }
