@@ -6733,6 +6733,11 @@ label {
   top: 0;
 }
 .tagsdiv .tagchecklist span {
+  background: none;
+  padding: 0;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
   font-size: 11.844px;
   font-weight: bold;
   line-height: 14px;
@@ -6821,6 +6826,11 @@ p.the-tagcloud blockquote {
   border-color: rgba(0,0,0,0.15);
 }
 p.the-tagcloud a {
+  background: none;
+  padding: 0;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
   font-size: 11.844px;
   font-weight: bold;
   line-height: 14px;
@@ -7076,7 +7086,10 @@ a.wp-menu-open .wp-menu-image:before,
 .menu-icon-topic .wp-menu-image,
 .menu-icon-reply .wp-menu-image,
 #menu-posts-download .wp-menu-image,
-.menu-top.toplevel_page_sam-list .wp-menu-image {
+.menu-top.toplevel_page_sam-list .wp-menu-image,
+.menu-top.toplevel_page_wpseo_dashboard .wp-menu-image,
+.menu-top.toplevel_page_Wordfence .wp-menu-image,
+#toplevel_page_edit-post_type-acf .wp-menu-image {
   background-image: none !important;
   position: absolute;
   top: 8px;
@@ -7114,7 +7127,10 @@ a.wp-menu-open .wp-menu-image:before,
 .menu-icon-topic .wp-menu-image:before,
 .menu-icon-reply .wp-menu-image:before,
 #menu-posts-download .wp-menu-image:before,
-.menu-top.toplevel_page_sam-list .wp-menu-image:before {
+.menu-top.toplevel_page_sam-list .wp-menu-image:before,
+.menu-top.toplevel_page_wpseo_dashboard .wp-menu-image:before,
+.menu-top.toplevel_page_Wordfence .wp-menu-image:before,
+#toplevel_page_edit-post_type-acf .wp-menu-image:before {
   margin-right: 5px;
   font-family: 'Elusive-Icons';
   font-size: 16px;
@@ -7151,7 +7167,10 @@ a.wp-menu-open .wp-menu-image:before,
 .menu-icon-topic .wp-menu-image img,
 .menu-icon-reply .wp-menu-image img,
 #menu-posts-download .wp-menu-image img,
-.menu-top.toplevel_page_sam-list .wp-menu-image img {
+.menu-top.toplevel_page_sam-list .wp-menu-image img,
+.menu-top.toplevel_page_wpseo_dashboard .wp-menu-image img,
+.menu-top.toplevel_page_Wordfence .wp-menu-image img,
+#toplevel_page_edit-post_type-acf .wp-menu-image img {
   display: none;
 }
 .menu-icon-dashboard div.wp-menu-name,
@@ -7186,7 +7205,10 @@ a.wp-menu-open .wp-menu-image:before,
 .menu-icon-topic div.wp-menu-name,
 .menu-icon-reply div.wp-menu-name,
 #menu-posts-download div.wp-menu-name,
-.menu-top.toplevel_page_sam-list div.wp-menu-name {
+.menu-top.toplevel_page_sam-list div.wp-menu-name,
+.menu-top.toplevel_page_wpseo_dashboard div.wp-menu-name,
+.menu-top.toplevel_page_Wordfence div.wp-menu-name,
+#toplevel_page_edit-post_type-acf div.wp-menu-name {
   padding-left: 30px !important;
 }
 #adminmenuwrap #adminmenu .menu-icon-feedback div.wp-menu-image {
@@ -7195,6 +7217,17 @@ a.wp-menu-open .wp-menu-image:before,
 }
 .folded h3.popover-title {
   height: 20px;
+}
+ul.radio_list {
+  padding-left: 18px !important;
+}
+.label,
+.badge {
+  background: none;
+  padding: 0;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
 }
 .menu-icon-dashboard .wp-menu-image:before {
   content: "\e09e";
@@ -7294,4 +7327,13 @@ a.wp-menu-open .wp-menu-image:before,
 }
 .menu-top.toplevel_page_sam-list .wp-menu-image:before {
   content: "\e0fb";
+}
+.menu-top.toplevel_page_wpseo_dashboard .wp-menu-image:before {
+  content: "\e003";
+}
+.menu-top.toplevel_page_Wordfence .wp-menu-image:before {
+  content: "\e085";
+}
+.menu-top#toplevel_page_edit-post_type-acf .wp-menu-image:before {
+  content: "\e07f";
 }

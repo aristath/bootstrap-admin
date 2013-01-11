@@ -636,7 +636,10 @@ a.wp-menu-open .wp-menu-image:before, .current .wp-menu-image:before {color: #ff
 .menu-icon-topic,
 .menu-icon-reply,
 #menu-posts-download,
-.menu-top.toplevel_page_sam-list {
+.menu-top.toplevel_page_sam-list,
+.menu-top.toplevel_page_wpseo_dashboard,
+.menu-top.toplevel_page_Wordfence,
+#toplevel_page_edit-post_type-acf {
   .wp-menu-image {
     background-image: none !important;
     position: absolute;
@@ -661,40 +664,53 @@ a.wp-menu-open .wp-menu-image:before, .current .wp-menu-image:before {color: #ff
   background-image: none !important;
 }
 
-.folded h3.popover-title{
+.folded h3.popover-title {
   height: 20px;
 }
 
-.menu-icon-dashboard .wp-menu-image:before                    { content: "\e09e"; }
-.menu-icon-post .wp-menu-image:before                         { content: "\e068"; }
-.menu-icon-page .wp-menu-image:before                         { content: "\e0bd"; }
-.menu-icon-media .wp-menu-image:before                        { content: "\e060"; }
-.menu-icon-links .wp-menu-image:before                        { content: "\e02f"; }
-.menu-icon-comments .wp-menu-image:before                     { content: "\e106"; }
-.menu-icon-appearance .wp-menu-image:before                   { content: "\e09d"; }
-.menu-icon-plugins .wp-menu-image:before                      { content: "\e07c"; }
-.menu-icon-users .wp-menu-image:before                        { content: "\e013"; }
-.menu-icon-tools .wp-menu-image:before                        { content: "\e004"; }
-.menu-icon-settings .wp-menu-image:before                     { content: "\e109"; }
-.menu-icon-product .wp-menu-image:before                      { content: "\e03a"; }
-.menu-top.toplevel_page_wpmudev .wp-menu-image:before         { content: "\e10d"; }
-.menu-top.toplevel_page_incsub_support .wp-menu-image:before  { content: "\e055"; }
-.menu-icon-site .wp-menu-image:before                         { content: "\e022"; }
-.menu-top.toplevel_page_psts-checkout .wp-menu-image:before   { content: "\e0b0"; }
-.menu-top.toplevel_page_cp_main .wp-menu-image:before         { content: "\e0e8"; }
-.menu-top.toplevel_page_mp_st .wp-menu-image:before           { content: "\e038"; }
-.menu-top.toplevel_page_customize .wp-menu-image:before       { content: "\e01d"; }
-.menu-top.toplevel_page_tools .wp-menu-image:before           { content: "\e0fd"; }
-.menu-top.toplevel_page_logout .wp-menu-image:before          { content: "\e02c"; }
-.menu-top.toplevel_page_business_tools .wp-menu-image:before  { content: "\e07a"; }
-.menu-top.toplevel_page_jetpack .wp-menu-image:before         { content: "\e023"; }
-.menu-icon-feedback .wp-menu-image:before                     { content: "\e03c"; }
-.menu-top.toplevel_page_wpcf7 .wp-menu-image:before           { content: "\e0ea"; }
-.menu-top.toplevel_page_newsletter .wp-menu-image:before      { content: "\e0eb"; }
-.menu-top.toplevel_page_nrelate-main .wp-menu-image:before    { content: "\e052"; }
-.menu-top.toplevel_page_wdfb .wp-menu-image:before            { content: "\e09c"; }
-.menu-icon-forum .wp-menu-image:before                        { content: "\e090"; }
-.menu-icon-topic .wp-menu-image:before                        { content: "\e0a3"; }
-.menu-icon-reply .wp-menu-image:before                        { content: "\e03b"; }
-#menu-posts-download .wp-menu-image:before                    { content: "\e0c9"; }
-.menu-top.toplevel_page_sam-list .wp-menu-image:before        { content: "\e0fb"; }
+ul.radio_list {
+  padding-left: 18px !important;
+}
+
+.label, .badge {
+  background: none;
+  padding: 0;
+  .border-radius(0px);
+}
+
+.menu-icon-dashboard .wp-menu-image:before                        { content: "\e09e"; }
+.menu-icon-post .wp-menu-image:before                             { content: "\e068"; }
+.menu-icon-page .wp-menu-image:before                             { content: "\e0bd"; }
+.menu-icon-media .wp-menu-image:before                            { content: "\e060"; }
+.menu-icon-links .wp-menu-image:before                            { content: "\e02f"; }
+.menu-icon-comments .wp-menu-image:before                         { content: "\e106"; }
+.menu-icon-appearance .wp-menu-image:before                       { content: "\e09d"; }
+.menu-icon-plugins .wp-menu-image:before                          { content: "\e07c"; }
+.menu-icon-users .wp-menu-image:before                            { content: "\e013"; }
+.menu-icon-tools .wp-menu-image:before                            { content: "\e004"; }
+.menu-icon-settings .wp-menu-image:before                         { content: "\e109"; }
+.menu-icon-product .wp-menu-image:before                          { content: "\e03a"; }
+.menu-top.toplevel_page_wpmudev .wp-menu-image:before             { content: "\e10d"; }
+.menu-top.toplevel_page_incsub_support .wp-menu-image:before      { content: "\e055"; }
+.menu-icon-site .wp-menu-image:before                             { content: "\e022"; }
+.menu-top.toplevel_page_psts-checkout .wp-menu-image:before       { content: "\e0b0"; }
+.menu-top.toplevel_page_cp_main .wp-menu-image:before             { content: "\e0e8"; }
+.menu-top.toplevel_page_mp_st .wp-menu-image:before               { content: "\e038"; }
+.menu-top.toplevel_page_customize .wp-menu-image:before           { content: "\e01d"; }
+.menu-top.toplevel_page_tools .wp-menu-image:before               { content: "\e0fd"; }
+.menu-top.toplevel_page_logout .wp-menu-image:before              { content: "\e02c"; }
+.menu-top.toplevel_page_business_tools .wp-menu-image:before      { content: "\e07a"; }
+.menu-top.toplevel_page_jetpack .wp-menu-image:before             { content: "\e023"; }
+.menu-icon-feedback .wp-menu-image:before                         { content: "\e03c"; }
+.menu-top.toplevel_page_wpcf7 .wp-menu-image:before               { content: "\e0ea"; }
+.menu-top.toplevel_page_newsletter .wp-menu-image:before          { content: "\e0eb"; }
+.menu-top.toplevel_page_nrelate-main .wp-menu-image:before        { content: "\e052"; }
+.menu-top.toplevel_page_wdfb .wp-menu-image:before                { content: "\e09c"; }
+.menu-icon-forum .wp-menu-image:before                            { content: "\e090"; }
+.menu-icon-topic .wp-menu-image:before                            { content: "\e0a3"; }
+.menu-icon-reply .wp-menu-image:before                            { content: "\e03b"; }
+#menu-posts-download .wp-menu-image:before                        { content: "\e0c9"; }
+.menu-top.toplevel_page_sam-list .wp-menu-image:before            { content: "\e0fb"; }
+.menu-top.toplevel_page_wpseo_dashboard .wp-menu-image:before     { content: "\e003"; }
+.menu-top.toplevel_page_Wordfence .wp-menu-image:before           { content: "\e085"; }
+.menu-top#toplevel_page_edit-post_type-acf .wp-menu-image:before  { content: "\e07f"; }
