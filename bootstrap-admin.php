@@ -137,6 +137,7 @@ function bootstrap_admin_register_option() {
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_change_footer_text' );
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_hide_footer_upgrade' );
 
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_welcome_panel' );
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_browser_nag' );
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_right_now' );
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_recent_comments' );
@@ -165,6 +166,7 @@ function bootstrap_admin_admin_page_content() {
   $bootstrap_admin_change_footer_check              = get_option( 'bootstrap_admin_change_footer_check' );
   $bootstrap_admin_change_footer_text               = get_option( 'bootstrap_admin_change_footer_text' );
   $bootstrap_admin_hide_footer_upgrade              = get_option( 'bootstrap_admin_hide_footer_upgrade' );
+  $bootstrap_admin_remove_welcome_panel             = get_option( 'bootstrap_admin_remove_welcome_panel' );
   $bootstrap_admin_remove_dashboard_browser_nag     = get_option( 'bootstrap_admin_remove_dashboard_browser_nag' );
   $bootstrap_admin_remove_dashboard_right_now       = get_option( 'bootstrap_admin_remove_dashboard_right_now' );
   $bootstrap_admin_remove_dashboard_recent_comments = get_option( 'bootstrap_admin_remove_dashboard_recent_comments' );
@@ -225,6 +227,11 @@ function bootstrap_admin_admin_page_content() {
 
           <h4><?php _e( 'Remove Dashboard Widgets', 'bootstrap_admin' ); ?></h4>
 
+          <input id="bootstrap_admin_remove_welcome_panel" name="bootstrap_admin_remove_welcome_panel" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_welcome_panel')); ?> />
+          <label class="description" for="bootstrap_admin_remove_welcome_panel">
+            <?php _e( 'Remove Default "Welcome" Panel Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
           <input id="bootstrap_admin_remove_dashboard_browser_nag" name="bootstrap_admin_remove_dashboard_browser_nag" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_remove_dashboard_browser_nag')); ?> />
           <label class="description" for="bootstrap_admin_remove_dashboard_browser_nag">
             <?php _e( 'Remove "Browser Nag" Widget', 'bootstrap_admin' ); ?>
@@ -319,6 +326,7 @@ if ( get_option( 'bootstrap_admin_hide_footer_upgrade' ) == 1 ) {
  * Removes Dashboard Widgets
  */
 function bootstrap_admin_remove_dashboard_widgets() {
+  $bootstrap_admin_remove_welcome_panel             = get_option( 'bootstrap_admin_remove_welcome_panel' );
   $bootstrap_admin_remove_dashboard_browser_nag     = get_option( 'bootstrap_admin_remove_dashboard_browser_nag' );
   $bootstrap_admin_remove_dashboard_right_now       = get_option( 'bootstrap_admin_remove_dashboard_right_now' );
   $bootstrap_admin_remove_dashboard_recent_comments = get_option( 'bootstrap_admin_remove_dashboard_recent_comments' );
@@ -329,6 +337,9 @@ function bootstrap_admin_remove_dashboard_widgets() {
   $bootstrap_admin_remove_dashboard_primary         = get_option( 'bootstrap_admin_remove_dashboard_primary' );
   $bootstrap_admin_remove_dashboard_secondary       = get_option( 'bootstrap_admin_remove_dashboard_secondary' );
   
+  if ( $bootstrap_admin_remove_welcome_panel == 1 ) {
+    remove_action( 'welcome_panel', 'wp_welcome_panel' );
+  }
   if ( $bootstrap_admin_remove_dashboard_browser_nag == 1 ) {
     remove_meta_box( 'dashboard_browser_nag', 'dashboard', 'normal' );
   }
