@@ -13,6 +13,7 @@ Author URI: http://aristeides.com
 // Less mode is mainly for development purposes.
 
 require_once 'includes/config.php';
+require_once 'includes/admin.php';
 
 function bootstrap_admin_phpless(){
 	require_once( WP_PLUGIN_DIR . '/bootstrap-admin/includes/lessc.inc.php' );
