@@ -155,6 +155,20 @@ function bootstrap_admin_register_option() {
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_users' );
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_tools' );
   register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_settings' );
+
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_pages' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_calendar' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_archives' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_links' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_meta' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_search' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_text' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_categories' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_recent_posts' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_recent_comments' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_rss' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_tag_cloud' );
+  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_menus' );
 }
 
 /*
@@ -170,27 +184,45 @@ function bootstrap_admin_admin_page() {
  * The content of the administration page for Bootstrap Admin.
  */
 function bootstrap_admin_admin_page_content() { 
-  $bootstrap_admin_remove_wp_menu_navbar            = get_option( 'bootstrap_admin_remove_wp_menu_navbar' );
-  $bootstrap_admin_change_footer_check              = get_option( 'bootstrap_admin_change_footer_check' );
-  $bootstrap_admin_change_footer_text               = get_option( 'bootstrap_admin_change_footer_text' );
-  $bootstrap_admin_hide_footer_upgrade              = get_option( 'bootstrap_admin_hide_footer_upgrade' );
-  $bootstrap_admin_remove_welcome_panel             = get_option( 'bootstrap_admin_remove_welcome_panel' );
-  $bootstrap_admin_remove_dashboard_browser_nag     = get_option( 'bootstrap_admin_remove_dashboard_browser_nag' );
-  $bootstrap_admin_remove_dashboard_right_now       = get_option( 'bootstrap_admin_remove_dashboard_right_now' );
-  $bootstrap_admin_remove_dashboard_recent_comments = get_option( 'bootstrap_admin_remove_dashboard_recent_comments' );
-  $bootstrap_admin_remove_dashboard_incoming_links  = get_option( 'bootstrap_admin_remove_dashboard_incoming_links' );
-  $bootstrap_admin_remove_dashboard_plugins         = get_option( 'bootstrap_admin_remove_dashboard_plugins' );
-  $bootstrap_admin_remove_dashboard_quick_press     = get_option( 'bootstrap_admin_remove_dashboard_quick_press' );
-  $bootstrap_admin_remove_dashboard_recent_drafts   = get_option( 'bootstrap_admin_remove_dashboard_recent_drafts' );
-  $bootstrap_admin_remove_dashboard_primary         = get_option( 'bootstrap_admin_remove_dashboard_primary' );
-  $bootstrap_admin_remove_dashboard_secondary       = get_option( 'bootstrap_admin_remove_dashboard_secondary' );
-  $bootstrap_admin_remove_menu_media                = get_option( 'bootstrap_admin_remove_menu_media' );
-  $bootstrap_admin_remove_menu_comments             = get_option( 'bootstrap_admin_remove_menu_comments' );
-  $bootstrap_admin_remove_menu_themes               = get_option( 'bootstrap_admin_remove_menu_themes' );
-  $bootstrap_admin_remove_menu_plugins              = get_option( 'bootstrap_admin_remove_menu_plugins' );
-  $bootstrap_admin_remove_menu_users                = get_option( 'bootstrap_admin_remove_menu_users' );
-  $bootstrap_admin_remove_menu_tools                = get_option( 'bootstrap_admin_remove_menu_tools' );
-  $bootstrap_admin_remove_menu_settings             = get_option( 'bootstrap_admin_remove_menu_settings' );
+  $bootstrap_admin_remove_wp_menu_navbar              = get_option( 'bootstrap_admin_remove_wp_menu_navbar' );
+
+  $bootstrap_admin_change_footer_check                = get_option( 'bootstrap_admin_change_footer_check' );
+  $bootstrap_admin_change_footer_text                 = get_option( 'bootstrap_admin_change_footer_text' );
+  $bootstrap_admin_hide_footer_upgrade                = get_option( 'bootstrap_admin_hide_footer_upgrade' );
+
+  $bootstrap_admin_remove_welcome_panel               = get_option( 'bootstrap_admin_remove_welcome_panel' );
+  $bootstrap_admin_remove_dashboard_browser_nag       = get_option( 'bootstrap_admin_remove_dashboard_browser_nag' );
+  $bootstrap_admin_remove_dashboard_right_now         = get_option( 'bootstrap_admin_remove_dashboard_right_now' );
+  $bootstrap_admin_remove_dashboard_recent_comments   = get_option( 'bootstrap_admin_remove_dashboard_recent_comments' );
+  $bootstrap_admin_remove_dashboard_incoming_links    = get_option( 'bootstrap_admin_remove_dashboard_incoming_links' );
+  $bootstrap_admin_remove_dashboard_plugins           = get_option( 'bootstrap_admin_remove_dashboard_plugins' );
+  $bootstrap_admin_remove_dashboard_quick_press       = get_option( 'bootstrap_admin_remove_dashboard_quick_press' );
+  $bootstrap_admin_remove_dashboard_recent_drafts     = get_option( 'bootstrap_admin_remove_dashboard_recent_drafts' );
+  $bootstrap_admin_remove_dashboard_primary           = get_option( 'bootstrap_admin_remove_dashboard_primary' );
+  $bootstrap_admin_remove_dashboard_secondary         = get_option( 'bootstrap_admin_remove_dashboard_secondary' );
+
+  $bootstrap_admin_remove_menu_media                  = get_option( 'bootstrap_admin_remove_menu_media' );
+  $bootstrap_admin_remove_menu_comments               = get_option( 'bootstrap_admin_remove_menu_comments' );
+  $bootstrap_admin_remove_menu_themes                 = get_option( 'bootstrap_admin_remove_menu_themes' );
+  $bootstrap_admin_remove_menu_plugins                = get_option( 'bootstrap_admin_remove_menu_plugins' );
+  $bootstrap_admin_remove_menu_users                  = get_option( 'bootstrap_admin_remove_menu_users' );
+  $bootstrap_admin_remove_menu_tools                  = get_option( 'bootstrap_admin_remove_menu_tools' );
+  $bootstrap_admin_remove_menu_settings               = get_option( 'bootstrap_admin_remove_menu_settings' );
+
+  $bootstrap_admin_unregister_widget_pages            = get_option( 'bootstrap_admin_unregister_widget_pages' );
+  $bootstrap_admin_unregister_widget_calendar         = get_option( 'bootstrap_admin_unregister_widget_calendar' );
+  $bootstrap_admin_unregister_widget_archives         = get_option( 'bootstrap_admin_unregister_widget_archives' );
+  $bootstrap_admin_unregister_widget_links            = get_option( 'bootstrap_admin_unregister_widget_links' );
+  $bootstrap_admin_unregister_widget_meta             = get_option( 'bootstrap_admin_unregister_widget_meta' );
+  $bootstrap_admin_unregister_widget_search           = get_option( 'bootstrap_admin_unregister_widget_search' );
+  $bootstrap_admin_unregister_widget_text             = get_option( 'bootstrap_admin_unregister_widget_text' );
+  $bootstrap_admin_unregister_widget_categories       = get_option( 'bootstrap_admin_unregister_widget_categories' );
+  $bootstrap_admin_unregister_widget_recent_posts     = get_option( 'bootstrap_admin_unregister_widget_recent_posts' );
+  $bootstrap_admin_unregister_widget_recent_comments  = get_option( 'bootstrap_admin_unregister_widget_recent_comments' );
+  $bootstrap_admin_unregister_widget_rss              = get_option( 'bootstrap_admin_unregister_widget_rss' );
+  $bootstrap_admin_unregister_widget_tag_cloud        = get_option( 'bootstrap_admin_unregister_widget_tag_cloud' );
+  $bootstrap_admin_unregister_widget_menus            = get_option( 'bootstrap_admin_unregister_widget_menus' );
+
   ?>
   <div class="wrap">
     <h2><?php _e( 'Bootstrap Admin Configuration', 'bootstrap_admin' ); ?></h2>
@@ -331,6 +363,74 @@ function bootstrap_admin_admin_page_content() {
           </label>
           <br />
 
+          <h4><?php _e( 'Remove Default Widgets', 'bootstrap_admin' ); ?></h4>
+
+          <input id="bootstrap_admin_unregister_widget_pages" name="bootstrap_admin_unregister_widget_pages" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_unregister_widget_pages')); ?> />
+          <label class="description" for="bootstrap_admin_unregister_widget_pages">
+            <?php _e( 'Pages Widges', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_unregister_widget_calendar" name="bootstrap_admin_unregister_widget_calendar" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_unregister_widget_calendar')); ?> />
+          <label class="description" for="bootstrap_admin_unregister_widget_calendar">
+            <?php _e( 'Calendar Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_unregister_widget_archives" name="bootstrap_admin_unregister_widget_archives" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_unregister_widget_archives')); ?> />
+          <label class="description" for="bootstrap_admin_unregister_widget_archives">
+            <?php _e( 'Archives Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_unregister_widget_links" name="bootstrap_admin_unregister_widget_links" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_unregister_widget_links')); ?> />
+          <label class="description" for="bootstrap_admin_unregister_widget_links">
+            <?php _e( 'Links Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_unregister_widget_meta" name="bootstrap_admin_unregister_widget_meta" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_unregister_widget_meta')); ?> />
+          <label class="description" for="bootstrap_admin_unregister_widget_meta">
+            <?php _e( 'Meta Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_unregister_widget_search" name="bootstrap_admin_unregister_widget_search" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_unregister_widget_search')); ?> />
+          <label class="description" for="bootstrap_admin_unregister_widget_search">
+            <?php _e( 'Search Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_unregister_widget_text" name="bootstrap_admin_unregister_widget_text" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_unregister_widget_text')); ?> />
+          <label class="description" for="bootstrap_admin_unregister_widget_text">
+            <?php _e( 'Text Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_unregister_widget_categories" name="bootstrap_admin_unregister_widget_categories" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_unregister_widget_categories')); ?> />
+          <label class="description" for="bootstrap_admin_unregister_widget_categories">
+            <?php _e( 'Categories Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_unregister_widget_recent_posts" name="bootstrap_admin_unregister_widget_recent_posts" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_unregister_widget_recent_posts')); ?> />
+          <label class="description" for="bootstrap_admin_unregister_widget_recent_posts">
+            <?php _e( 'Recent Post Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_unregister_widget_recent_comments" name="bootstrap_admin_unregister_widget_recent_comments" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_unregister_widget_recent_comments')); ?> />
+          <label class="description" for="bootstrap_admin_unregister_widget_recent_comments">
+            <?php _e( 'Recent Comments Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_unregister_widget_rss" name="bootstrap_admin_unregister_widget_rss" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_unregister_widget_rss')); ?> />
+          <label class="description" for="bootstrap_admin_unregister_widget_rss">
+            <?php _e( 'RSS Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_unregister_widget_tag_cloud" name="bootstrap_admin_unregister_widget_tag_cloud" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_unregister_widget_tag_cloud')); ?> />
+          <label class="description" for="bootstrap_admin_unregister_widget_tag_cloud">
+            <?php _e( 'Tag Cloud Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+          <input id="bootstrap_admin_unregister_widget_menus" name="bootstrap_admin_unregister_widget_menus" type="checkbox" value="1" <?php checked('1', get_option('bootstrap_admin_unregister_widget_menus')); ?> />
+          <label class="description" for="bootstrap_admin_unregister_widget_menus">
+            <?php _e( 'Menus Widget', 'bootstrap_admin' ); ?>
+          </label>
+          <br />
+
           <?php submit_button(); ?>
 
         </form>
@@ -460,3 +560,60 @@ function bootstrap_admin_remove_default_menus() {
   }
 }
 add_action('admin_menu', 'bootstrap_admin_remove_default_menus');
+
+function bootstrap_admin_unregister_widgets() {
+  $bootstrap_admin_unregister_widget_pages            = get_option( 'bootstrap_admin_unregister_widget_pages' );
+  $bootstrap_admin_unregister_widget_calendar         = get_option( 'bootstrap_admin_unregister_widget_calendar' );
+  $bootstrap_admin_unregister_widget_archives         = get_option( 'bootstrap_admin_unregister_widget_archives' );
+  $bootstrap_admin_unregister_widget_links            = get_option( 'bootstrap_admin_unregister_widget_links' );
+  $bootstrap_admin_unregister_widget_meta             = get_option( 'bootstrap_admin_unregister_widget_meta' );
+  $bootstrap_admin_unregister_widget_search           = get_option( 'bootstrap_admin_unregister_widget_search' );
+  $bootstrap_admin_unregister_widget_text             = get_option( 'bootstrap_admin_unregister_widget_text' );
+  $bootstrap_admin_unregister_widget_categories       = get_option( 'bootstrap_admin_unregister_widget_categories' );
+  $bootstrap_admin_unregister_widget_recent_posts     = get_option( 'bootstrap_admin_unregister_widget_recent_posts' );
+  $bootstrap_admin_unregister_widget_recent_comments  = get_option( 'bootstrap_admin_unregister_widget_recent_comments' );
+  $bootstrap_admin_unregister_widget_rss              = get_option( 'bootstrap_admin_unregister_widget_rss' );
+  $bootstrap_admin_unregister_widget_tag_cloud        = get_option( 'bootstrap_admin_unregister_widget_tag_cloud' );
+  $bootstrap_admin_unregister_widget_menus            = get_option( 'bootstrap_admin_unregister_widget_menus' );
+  
+  if ( $bootstrap_admin_unregister_widget_pages == 1 ) {
+    unregister_widget( 'WP_Widget_Pages' );
+  }
+  if ( $bootstrap_admin_unregister_widget_calendar == 1 ) {
+    unregister_widget( 'WP_Widget_Calendar' );
+  }
+  if ( $bootstrap_admin_unregister_widget_archives == 1 ) {
+    unregister_widget( 'WP_Widget_Archives' );
+  }
+  if ( $bootstrap_admin_unregister_widget_links == 1 ) {
+    unregister_widget( 'WP_Widget_Links' );
+  }
+  if ( $bootstrap_admin_unregister_widget_meta == 1 ) {
+    unregister_widget( 'WP_Widget_Meta' );
+  }
+  if ( $bootstrap_admin_unregister_widget_search == 1 ) {
+    unregister_widget( 'WP_Widget_Search' );
+  }
+  if ( $bootstrap_admin_unregister_widget_text == 1 ) {
+    unregister_widget( 'WP_Widget_Text' );
+  }
+  if ( $bootstrap_admin_unregister_widget_categories == 1 ) {
+    unregister_widget( 'WP_Widget_Categories' );
+  }
+  if ( $bootstrap_admin_unregister_widget_recent_posts == 1 ) {
+    unregister_widget( 'WP_Widget_Recent_Posts' );
+  }
+  if ( $bootstrap_admin_unregister_widget_recent_comments == 1 ) {
+    unregister_widget( 'WP_Widget_Recent_Comments' );
+  }
+  if ( $bootstrap_admin_unregister_widget_rss == 1 ) {
+    unregister_widget( 'WP_Widget_RSS' );
+  }
+  if ( $bootstrap_admin_unregister_widget_tag_cloud == 1 ) {
+    unregister_widget( 'WP_Widget_Tag_Cloud' );
+  }
+  if ( $bootstrap_admin_unregister_widget_menus == 1 ) {
+    unregister_widget( 'WP_Nav_Menu_Widget' );
+  }
+}
+add_action( 'widgets_init', 'bootstrap_admin_unregister_widgets' );
