@@ -127,48 +127,57 @@ remove_action( 'wp_default_styles', 'wp_default_styles' );              // remov
 add_action( 'wp_default_styles', 'bootstrap_admin_wp_default_styles' ); // adds our customized bootstrap_admin_wp_default_styles function
 
 /*
+ * Abstraction for multisite/single-site installations
+ */
+function bootstrap_admin_new_setting( $setting ) {
+  if ( !is_multisite() ) {
+    register_setting( 'bootstrap_admin_options', $setting );
+  }
+}
+
+/*
  * Creates our settings in the options table in the database
  */
 add_action( 'admin_init', 'bootstrap_admin_register_option', 11 );
 function bootstrap_admin_register_option() {
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_wp_menu_navbar' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_wp_menu_navbar' );
 
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_change_footer_check' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_change_footer_text' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_hide_footer_upgrade' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_change_footer_check' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_change_footer_text' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_hide_footer_upgrade' );
 
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_welcome_panel' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_browser_nag' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_right_now' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_recent_comments' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_incoming_links' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_plugins' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_quick_press' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_recent_drafts' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_primary' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_dashboard_secondary' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_welcome_panel' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_dashboard_browser_nag' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_dashboard_right_now' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_dashboard_recent_comments' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_dashboard_incoming_links' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_dashboard_plugins' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_dashboard_quick_press' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_dashboard_recent_drafts' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_dashboard_primary' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_dashboard_secondary' );
 
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_media' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_comments' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_themes' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_plugins' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_users' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_tools' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_remove_menu_settings' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_menu_media' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_menu_comments' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_menu_themes' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_menu_plugins' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_menu_users' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_menu_tools' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_remove_menu_settings' );
 
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_pages' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_calendar' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_archives' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_links' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_meta' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_search' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_text' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_categories' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_recent_posts' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_recent_comments' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_rss' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_tag_cloud' );
-  register_setting( 'bootstrap_admin_options', 'bootstrap_admin_unregister_widget_menus' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_unregister_widget_pages' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_unregister_widget_calendar' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_unregister_widget_archives' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_unregister_widget_links' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_unregister_widget_meta' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_unregister_widget_search' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_unregister_widget_text' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_unregister_widget_categories' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_unregister_widget_recent_posts' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_unregister_widget_recent_comments' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_unregister_widget_rss' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_unregister_widget_tag_cloud' );
+  bootstrap_admin_new_setting( 'bootstrap_admin_unregister_widget_menus' );
 }
 
 /*
