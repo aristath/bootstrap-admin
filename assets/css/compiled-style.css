@@ -6389,6 +6389,12 @@ li.wp-menu-separator {
   text-shadow: none;
   text-shadow: 0;
 }
+#adminmenu h3.popover-title div.wp-menu-image {
+  height: 15px;
+}
+#adminmenu h3.popover-title .wp-menu-name {
+  padding: 0;
+}
 .widefat th#thumbnail {
   width: 90px !important;
 }
@@ -7219,6 +7225,11 @@ a.wp-menu-open .wp-menu-image:before,
 }
 .folded h3.popover-title {
   height: 20px;
+}
+.folded .wp-submenu-head {
+  position: absolute;
+  top: 10px;
+  left: 30px;
 }
 ul.radio_list {
   padding-left: 18px !important;
