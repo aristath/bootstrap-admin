@@ -51,6 +51,10 @@ from '0' to '1'.
 
 == Changelog ==
 
+= 1.15 =
+* Updated Bootstrap to 2.3.0
+* Tweaked the popover title css
+
 = 1.13 =
 * Fixed issue with Jetpack's "Feedback" icon
 * Added icon for Yoast SEO
